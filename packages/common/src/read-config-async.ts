@@ -23,7 +23,7 @@ import {
   RawConfigRelaunchButtons
 } from './types/private/raw-config.js'
 
-let defaultConfig: Config = {
+const defaultConfig: Config = {
   id: constants.packageJson.defaultName,
   api: constants.build.manifestPluginApi,
   widgetApi: constants.build.manifestWidgetApi,
@@ -44,19 +44,19 @@ let defaultConfig: Config = {
 }
 
 export async function readConfigAsync(): Promise<Config> {
-  let packageJsonPath = join(process.cwd(), 'package.json')
+  const packageJsonPath = join(process.cwd(), 'package.json')
   if ((await pathExists(packageJsonPath)) === false) {
     log.info('Using default configuration')
     return defaultConfig
   }
-  let packageJson: any = JSON.parse(
+  const packageJson: any = JSON.parse(
     await fs.readFile(packageJsonPath, 'utf8')
   )
-  let config = packageJson[constants.packageJson.configKey]
+  const config = packageJson[constants.packageJson.configKey]
   if (typeof config === 'undefined' || Object.keys(config).length === 0) {
     return defaultConfig
   }
-  let {
+  const {
     id,
     api,
     widgetApi,
@@ -91,7 +91,7 @@ export async function readConfigAsync(): Promise<Config> {
 }
 
 function parseCommand(command: RawConfigCommand): ConfigCommand {
-  let { name, main, ui, menu, parameters, parameterOnly } = command
+  const { name, main, ui, menu, parameters, parameterOnly } = command
   return {
     commandId: typeof main === 'undefined' ? null : parseCommandId(main),
     name,
@@ -118,7 +118,7 @@ function parseCommandId(main: RawConfigFile): string {
   if (typeof main === 'string') {
     return `${main}--default`
   }
-  let { src, handler } = main
+  const { src, handler } = main
   if (typeof handler === 'undefined') {
     return `${src}--default`
   }
@@ -128,9 +128,9 @@ function parseCommandId(main: RawConfigFile): string {
 function parseParameters(
   parameters: Array<RawConfigParameter>
 ): Array<ConfigParameter> {
-  let result: Array<ConfigParameter> = []
-  for (let parameter of parameters) {
-    let { allowFreeform, description, key, name, optional } = parameter
+  const result: Array<ConfigParameter> = []
+  for (const parameter of parameters) {
+    const { allowFreeform, description, key, name, optional } = parameter
     result.push({
       allowFreeform:
         typeof allowFreeform === 'undefined' ? false : allowFreeform,
@@ -146,9 +146,9 @@ function parseParameters(
 function parseRelaunchButtons(
   relaunchButtons: RawConfigRelaunchButtons
 ): Array<ConfigRelaunchButton> {
-  let result: Array<ConfigRelaunchButton> = []
-  for (let commandId in relaunchButtons) {
-    let { name, main, ui, multipleSelection } = relaunchButtons[commandId]
+  const result: Array<ConfigRelaunchButton> = []
+  for (const commandId in relaunchButtons) {
+    const { name, main, ui, multipleSelection } = relaunchButtons[commandId]
     if (typeof main === 'undefined') {
       throw new Error(`Need a \`main\` for relaunch button: ${name}`)
     }
@@ -171,7 +171,7 @@ function parseFile(file: RawConfigFile): ConfigFile {
       handler: 'default'
     }
   }
-  let { src, handler } = file
+  const { src, handler } = file
   if (typeof handler === 'undefined') {
     return {
       src,
