@@ -15,7 +15,7 @@ export function sortNodesByCanonicalOrder<Node extends SceneNode>(
   if (siblingNodes.length < 2) {
     return siblingNodes.slice()
   }
-  let parentNode = getParentNode(siblingNodes[0])
+  const parentNode = getParentNode(siblingNodes[0])
   if (areSiblingNodes(siblingNodes) === false) {
     throw new Error('Nodes in `siblingNodes` do not have the same parent')
   }
