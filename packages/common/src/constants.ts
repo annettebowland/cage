@@ -1,4 +1,4 @@
-export const constants = {
+export let constants = {
   build: {
     buildDirectoryName: 'build',
     mainConfigGlobPattern: 'build-figma-plugin.main.{cjs,js}',
