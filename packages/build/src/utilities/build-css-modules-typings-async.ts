@@ -5,10 +5,10 @@ import { fileURLToPath } from 'node:url'
 import { constants } from '@create-figma-plugin/common'
 import { findUp } from 'find-up'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+let __dirname = dirname(fileURLToPath(import.meta.url))
 
 export async function buildCssModulesTypingsAsync(): Promise<void> {
-  const tcm = await findUp(
+  let tcm = await findUp(
     join('node_modules', 'typed-css-modules', 'lib', 'cli.js'),
     { cwd: __dirname }
   )
