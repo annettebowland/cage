@@ -7,9 +7,9 @@ import test from 'ava'
 
 import { readConfigAsync } from '../../src/read-config-async.js'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+let __dirname = dirname(fileURLToPath(import.meta.url))
 
-const config = {
+let config = {
   api: '1.0.0',
   widgetApi: '1.0.0',
   editorType: ['figma'],
@@ -25,7 +25,7 @@ const config = {
   rest: null
 }
 
-const menuItemConfig = {
+let menuItemConfig = {
   commandId: 'c--default',
   name: 'b',
   main: {
