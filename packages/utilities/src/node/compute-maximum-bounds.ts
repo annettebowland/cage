@@ -24,8 +24,8 @@ export function computeMaximumBounds(
       y: -1 * Number.MAX_VALUE
     }
   ]
-  for (var node of nodes) {
-    var { x, y, width, height } = computeBoundingBox(node)
+  for (const node of nodes) {
+    const { x, y, width, height } = computeBoundingBox(node)
     maximumBounds = [
       {
         x: Math.min(maximumBounds[0].x, x),
