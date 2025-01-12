@@ -1,7 +1,7 @@
 export function getFocusableElements(
   rootElement?: HTMLElement
 ): Array<HTMLElement> {
-  const elements = (
+  let elements = (
     typeof rootElement === 'undefined' ? document : rootElement
   ).querySelectorAll<HTMLElement>(
     ':not([disabled])[tabindex]:not([tabindex="-1"])'
