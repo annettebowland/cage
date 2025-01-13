@@ -1,7 +1,7 @@
-let CHECK = '✔'
-let CROSS = '✘'
-let WARNING = '⚠'
-let SPACE = '\u00a0'
+const CHECK = '✔'
+const CROSS = '✘'
+const WARNING = '⚠'
+const SPACE = '\u00a0'
 
 /**
  * Adds a `✔` prefix to the given `message`.
