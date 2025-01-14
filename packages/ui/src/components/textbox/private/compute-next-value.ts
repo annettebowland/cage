@@ -2,9 +2,9 @@ export function computeNextValue(
   inputElement: HTMLInputElement,
   insertedString: string
 ): string {
-  const value = inputElement.value
-  const selectionStart = inputElement.selectionStart
-  const selectionEnd = inputElement.selectionEnd
+  let value = inputElement.value
+  let selectionStart = inputElement.selectionStart
+  let selectionEnd = inputElement.selectionEnd
   return `${value.substring(
     0,
     selectionStart === null ? 0 : selectionStart
