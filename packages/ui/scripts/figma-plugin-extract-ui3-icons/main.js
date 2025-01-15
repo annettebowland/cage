@@ -1,13 +1,13 @@
 /* global figma */
 
-let newSelection = []
-for (let node of figma.currentPage.selection) {
-  let componentNodes = node.findAllWithCriteria({
+const newSelection = []
+for (const node of figma.currentPage.selection) {
+  const componentNodes = node.findAllWithCriteria({
     types: ['COMPONENT']
   })
-  for (let componentNode of componentNodes) {
+  for (const componentNode of componentNodes) {
     if (componentNode.parent.type === 'COMPONENT_SET') {
-      let propertyValues = componentNode.name
+      const propertyValues = componentNode.name
         .toLowerCase()
         .split(/ ?, ?/)
         .map(function (string) {
@@ -16,7 +16,7 @@ for (let node of figma.currentPage.selection) {
         .join('-')
       componentNode.name = `${componentNode.parent.name}-${propertyValues}`
     }
-    let split = componentNode.name.split(/[.-]/)
+    const split = componentNode.name.split(/[.-]/)
     if (split[0] === 'favicon') {
       continue
     }
