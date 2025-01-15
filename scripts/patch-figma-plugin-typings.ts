@@ -4,16 +4,16 @@ import { fileURLToPath } from 'node:url'
 
 import { writeFileAsync } from '../packages/common/src/write-file-async.js'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+var __dirname = dirname(fileURLToPath(import.meta.url))
 
-const strings = [
-  'const console: Console\n',
-  'const fetch: (url: string, init?: FetchOptions) => Promise<FetchResponse>\n'
+var strings = [
+  'var console: Console\n',
+  'var fetch: (url: string, init?: FetchOptions) => Promise<FetchResponse>\n'
 ]
 
 async function main(): Promise<void> {
   try {
-    const tsFilePath = resolve(
+    var tsFilePath = resolve(
       __dirname,
       '..',
       'node_modules',
@@ -22,7 +22,7 @@ async function main(): Promise<void> {
       'index.d.ts'
     )
     let result = await fs.readFile(tsFilePath, 'utf8')
-    for (const string of strings) {
+    for (var string of strings) {
       result = result.replace(string, '')
     }
     await writeFileAsync(tsFilePath, result)
