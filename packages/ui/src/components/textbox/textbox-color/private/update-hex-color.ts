@@ -4,12 +4,12 @@ import {
 } from '@create-figma-plugin/utilities'
 
 export function updateHexColor(hexColor: string, delta: number): string {
-  let rgbColor = convertHexColorToRgbColor(hexColor)
+  const rgbColor = convertHexColorToRgbColor(hexColor)
   if (rgbColor === null) {
     throw new Error('Invalid `hexColor`')
   }
-  let { r, g, b } = rgbColor
-  let result = convertRgbColorToHexColor({
+  const { r, g, b } = rgbColor
+  const result = convertRgbColorToHexColor({
     b: updateValue(b, delta),
     g: updateValue(g, delta),
     r: updateValue(r, delta)
@@ -21,6 +21,6 @@ export function updateHexColor(hexColor: string, delta: number): string {
 }
 
 function updateValue(value: number, delta: number): number {
-  let newValue = value * 255 + delta
+  const newValue = value * 255 + delta
   return Math.min(Math.max(newValue, 0), 255) / 255
 }
