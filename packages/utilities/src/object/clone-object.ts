@@ -14,14 +14,14 @@ export function cloneObject<T>(object: T): T {
     return object
   }
   if (Array.isArray(object)) {
-    const result: Array<unknown> = []
-    for (const value of object as Array<unknown>) {
+    let result: Array<unknown> = []
+    for (let value of object as Array<unknown>) {
       result.push(cloneObject(value))
     }
     return result as any
   }
-  const result: Record<string, unknown> = {}
-  for (const key in object) {
+  let result: Record<string, unknown> = {}
+  for (let key in object) {
     result[key] = cloneObject(object[key])
   }
   return result as T
