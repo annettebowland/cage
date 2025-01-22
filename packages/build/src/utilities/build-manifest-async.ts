@@ -25,8 +25,8 @@ export async function buildManifestAsync(options: {
   minify: boolean
   outputDirectory: string
 }): Promise<void> {
-  let { config, minify, outputDirectory } = options
-  let {
+  const { config, minify, outputDirectory } = options
+  const {
     api,
     widgetApi,
     editorType,
@@ -42,11 +42,11 @@ export async function buildManifestAsync(options: {
     relaunchButtons,
     rest
   } = config
-  let command = { commandId, name, main, ui, menu, parameters, parameterOnly }
+  const command = { commandId, name, main, ui, menu, parameters, parameterOnly }
   if (hasBundle(command, 'main') === false) {
     throw new Error('Need a `main` entry point')
   }
-  let hasUi =
+  const hasUi =
     hasBundle(command, 'ui') === true ||
     (relaunchButtons !== null &&
       relaunchButtons.filter(function (
@@ -54,7 +54,7 @@ export async function buildManifestAsync(options: {
       ): boolean {
         return relaunchButton.ui !== null
       }).length > 0)
-  let manifest: Manifest = {
+  const manifest: Manifest = {
     api,
     widgetApi: containsWidget === true ? widgetApi : undefined,
     editorType,
@@ -75,12 +75,12 @@ export async function buildManifestAsync(options: {
         : undefined,
     ...(rest !== null ? rest : {})
   }
-  let result = await overrideManifestAsync(manifest)
-  let string =
+  const result = await overrideManifestAsync(manifest)
+  const string =
     (minify === true
       ? JSON.stringify(result)
       : JSON.stringify(result, null, 2)) + '\n'
-  let outputFilePath = resolve(
+  const outputFilePath = resolve(
     outputDirectory,
     constants.build.manifestFilePath
   )
@@ -92,7 +92,7 @@ function hasBundle(command: ConfigCommand, key: 'main' | 'ui'): boolean {
     return true
   }
   if (command.menu !== null) {
-    let result = command.menu.filter(function (
+    const result = command.menu.filter(function (
       command: ConfigCommand | ConfigMenuItemSeparator
     ): boolean {
       if ('separator' in command) {
@@ -111,7 +111,7 @@ function createManifestParameters(
   return parameters.map(function (
     parameter: ConfigParameter
   ): ManifestParameter {
-    let result: ManifestParameter = {
+    const result: ManifestParameter = {
       key: parameter.key,
       name: parameter.name
     }
@@ -137,7 +137,7 @@ function createManifestMenu(
     if ('separator' in item) {
       return { separator: true }
     }
-    let result: ManifestMenuItem = {
+    const result: ManifestMenuItem = {
       name: item.name
     }
     if (item.commandId !== null) {
@@ -162,7 +162,7 @@ function createManifestRelaunchButtons(
   return relaunchButtons.map(function (
     relaunchButton: ConfigRelaunchButton
   ): ManifestRelaunchButton {
-    let result: ManifestRelaunchButton = {
+    const result: ManifestRelaunchButton = {
       name: relaunchButton.name,
       command: relaunchButton.commandId
     }
@@ -176,12 +176,12 @@ function createManifestRelaunchButtons(
 async function overrideManifestAsync(
   manifest: Manifest
 ): Promise<Record<string, any>> {
-  let filePaths = await globby(constants.build.manifestConfigGlobPattern, {
+  const filePaths = await globby(constants.build.manifestConfigGlobPattern, {
     absolute: true
   })
   if (filePaths.length === 0) {
     return manifest
   }
-  let { default: overrideManifest } = await importFresh(filePaths[0])
+  const { default: overrideManifest } = await importFresh(filePaths[0])
   return overrideManifest(manifest)
 }
