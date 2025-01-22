@@ -6,7 +6,7 @@
  * @category Node
  */
 export function isWithinInstanceNode(node: SceneNode): boolean {
-  let parentNode = node.parent
+  const parentNode = node.parent
   if (
     parentNode === null ||
     parentNode.type === 'DOCUMENT' ||
