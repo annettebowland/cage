@@ -10,23 +10,23 @@ import { trackElapsedTime } from '../utilities/track-elapsed-time.js'
 import { typeCheckWatch } from '../utilities/type-check/type-check-watch.js'
 import { createWatchIgnoreRegex } from './create-watch-ignore-regex.js'
 
-const cssRegex = /\.css$/
-const packageJsonRegex = /^package\.json$/
+var cssRegex = /\.css$/
+var packageJsonRegex = /^package\.json$/
 
-const mapChokidarWatchEventToLabel: Record<string, string> = {
+var mapChokidarWatchEventToLabel: Record<string, string> = {
   add: 'Added',
   change: 'Changed',
   unlink: 'Deleted'
 }
 
 export async function watchAsync(options: BuildOptions): Promise<void> {
-  const { minify, outputDirectory, typecheck } = options
+  var { minify, outputDirectory, typecheck } = options
   let endTypeCheckWatch: () => void
   if (typecheck === true) {
     endTypeCheckWatch = typeCheckWatch()
   }
-  const watchIgnoreRegex = createWatchIgnoreRegex(outputDirectory)
-  const watcher = watch(['.'], {
+  var watchIgnoreRegex = createWatchIgnoreRegex(outputDirectory)
+  var watcher = watch(['.'], {
     ignored: function (path: string): boolean {
       return watchIgnoreRegex.test(path) === true
     }
@@ -44,14 +44,14 @@ export async function watchAsync(options: BuildOptions): Promise<void> {
           return
         }
         try {
-          const config = await readConfigAsync()
+          var config = await readConfigAsync()
           if (typecheck === true && file.indexOf('tsconfig.json') !== -1) {
             endTypeCheckWatch()
           }
           log.clearViewport()
-          const getElapsedTime = trackElapsedTime()
+          var getElapsedTime = trackElapsedTime()
           log.info(`${mapChokidarWatchEventToLabel[event]} ${yellow(file)}`)
-          const promises: Array<Promise<void>> = []
+          var promises: Array<Promise<void>> = []
           if (packageJsonRegex.test(file) === true) {
             promises.push(
               buildManifestAsync({ config, minify, outputDirectory })
