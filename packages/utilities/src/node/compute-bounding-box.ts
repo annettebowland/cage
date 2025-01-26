@@ -11,15 +11,15 @@ import { getParentNode } from './get-nodes/get-parent-node.js'
  */
 export function computeBoundingBox(node: SceneNode): Rect {
   if ('rotation' in node && node.rotation === 0) {
-    const absolutePosition = getAbsolutePosition(node)
-    const { width, height } = node
+    let absolutePosition = getAbsolutePosition(node)
+    let { width, height } = node
     return { ...absolutePosition, height, width }
   }
-  const parentNode = getParentNode(node)
-  const index = parentNode.children.indexOf(node)
-  const group = figma.group([node], parentNode, index)
-  const absolutePosition = getAbsolutePosition(group)
-  const { width, height } = group
+  let parentNode = getParentNode(node)
+  let index = parentNode.children.indexOf(node)
+  let group = figma.group([node], parentNode, index)
+  let absolutePosition = getAbsolutePosition(group)
+  let { width, height } = group
   parentNode.insertChild(index, node)
   return { ...absolutePosition, height, width }
 }
