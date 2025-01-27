@@ -11,9 +11,9 @@ export function areSiblingNodes(nodes: Array<SceneNode>): boolean {
   if (nodes.length < 2) {
     return true
   }
-  const [firstNode, ...rest] = nodes
-  const firstParentNode = getParentNode(firstNode)
-  for (const node of rest) {
+  let [firstNode, ...rest] = nodes
+  let firstParentNode = getParentNode(firstNode)
+  for (let node of rest) {
     if (node.parent === null || node.parent.id !== firstParentNode.id) {
       return false
     }
