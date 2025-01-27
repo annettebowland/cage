@@ -5,7 +5,7 @@
  * @category Node
  */
 export function getSelectedNodesOrAllNodes(): Array<SceneNode> {
-  let selectedNodes = figma.currentPage.selection
+  const selectedNodes = figma.currentPage.selection
   if (selectedNodes.length > 0) {
     return selectedNodes.slice()
   }
