@@ -6,7 +6,7 @@
  * @category Node
  */
 export function getParentNode(node: BaseNode): BaseNode & ChildrenMixin {
-  let parentNode = node.parent
+  const parentNode = node.parent
   if (parentNode === null) {
     throw new Error(`\`node.parent\` is \`null\``)
   }
