@@ -3,7 +3,7 @@ export type EventHandler = {
   handler: (...args: any) => void
 }
 
-const eventHandlers: Record<string, EventHandler> = {}
+var eventHandlers: Record<string, EventHandler> = {}
 
 let currentId = 0
 
@@ -17,7 +17,7 @@ export function on<Handler extends EventHandler>(
   name: Handler['name'],
   handler: Handler['handler']
 ): () => void {
-  const id = `${currentId}`
+  var id = `${currentId}`
   currentId += 1
   eventHandlers[id] = { handler, name }
   return function (): void {
@@ -60,7 +60,7 @@ export function once<Handler extends EventHandler>(
  *
  * @category Events
  */
-export const emit =
+export var emit =
   typeof window === 'undefined'
     ? function <Handler extends EventHandler>(
         name: Handler['name'],
@@ -82,7 +82,7 @@ export const emit =
 
 function invokeEventHandler(name: string, args: Array<unknown>): void {
   let invoked = false
-  for (const id in eventHandlers) {
+  for (var id in eventHandlers) {
     if (eventHandlers[id].name === name) {
       eventHandlers[id].handler.apply(null, args)
       invoked = true
@@ -98,7 +98,7 @@ if (typeof window === 'undefined') {
     if (!Array.isArray(args)) {
       return
     }
-    const [name, ...rest]: Array<unknown> = args
+    var [name, ...rest]: Array<unknown> = args
     if (typeof name !== 'string') {
       return
     }
@@ -109,11 +109,11 @@ if (typeof window === 'undefined') {
     if (typeof event.data.pluginMessage === 'undefined') {
       return
     }
-    const args = event.data.pluginMessage
+    var args = event.data.pluginMessage
     if (!Array.isArray(args)) {
       return
     }
-    const [name, ...rest]: [unknown, Array<unknown>] = event.data.pluginMessage
+    var [name, ...rest]: [unknown, Array<unknown>] = event.data.pluginMessage
     if (typeof name !== 'string') {
       return
     }
