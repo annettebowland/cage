@@ -4,7 +4,7 @@ export function useWindowKeyDown(
   key: KeyboardEvent['key'],
   onKeyDown: (event: KeyboardEvent) => void
 ): void {
-  let handleKeyDown = useCallback(
+  const handleKeyDown = useCallback(
     function (event: KeyboardEvent): void {
       if (event.key !== key) {
         return
