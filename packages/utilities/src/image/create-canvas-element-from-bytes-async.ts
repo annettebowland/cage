@@ -10,6 +10,6 @@ import { createImageElementFromBytesAsync } from './create-image-element-from-by
 export async function createCanvasElementFromBytesAsync(
   bytes: Uint8Array
 ): Promise<HTMLCanvasElement> {
-  let imageElement = await createImageElementFromBytesAsync(bytes)
+  const imageElement = await createImageElementFromBytesAsync(bytes)
   return createCanvasElementFromImageElement(imageElement)
 }
