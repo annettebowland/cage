@@ -7,7 +7,7 @@ export function useMouseDownOutside(options: {
   ref: RefObject<HTMLElement>
   onMouseDownOutside: () => void
 }): void {
-  const { ref, onMouseDownOutside } = options
+  let { ref, onMouseDownOutside } = options
   useEffect(
     function (): () => void {
       function handleBlur() {
@@ -15,7 +15,7 @@ export function useMouseDownOutside(options: {
         onMouseDownOutside()
       }
       function handleMouseDown(event: MouseEvent): void {
-        const element = getCurrentFromRef(ref)
+        let element = getCurrentFromRef(ref)
         if (
           element === event.target ||
           element.contains(event.target as HTMLElement)
