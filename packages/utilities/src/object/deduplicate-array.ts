@@ -8,9 +8,9 @@
 export function deduplicateArray<T extends boolean | number | string>(
   array: Array<T>
 ): Array<T> {
-  let object: Record<string, true> = {}
-  let result: Array<T> = []
-  for (let value of array) {
+  const object: Record<string, true> = {}
+  const result: Array<T> = []
+  for (const value of array) {
     if (object[`${value}`] === true) {
       continue
     }
