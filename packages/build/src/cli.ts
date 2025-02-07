@@ -22,7 +22,7 @@ sade('build-figma-plugin', true)
     typecheck: boolean
     watch: boolean
   }): Promise<void> {
-    let buildOptions: BuildOptions = {
+    const buildOptions: BuildOptions = {
       minify: options.minify === true,
       outputDirectory: options.output === null ? process.cwd() : options.output,
       typecheck: options.typecheck === true
