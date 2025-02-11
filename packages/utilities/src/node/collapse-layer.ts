@@ -8,7 +8,7 @@ import { traverseNode } from './traverse-node.js'
  * @category Node
  */
 export function collapseLayer(node: SceneNode): boolean {
-  const didChange = false
+  let didChange = false
   traverseNode(node, function (node: SceneNode): void {
     if ('expanded' in node && node.expanded === true) {
       node.expanded = false
