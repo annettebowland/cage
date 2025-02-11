@@ -8,7 +8,7 @@ export async function readBytesFromCanvasElementAsync(
 ): Promise<Uint8Array> {
   return new Promise<Uint8Array>(function (resolve, reject) {
     canvasElement.toBlob(function (blob: null | Blob) {
-      let reader = new FileReader()
+      const reader = new FileReader()
       reader.onload = function () {
         resolve(new Uint8Array(reader.result as ArrayBuffer))
       }
