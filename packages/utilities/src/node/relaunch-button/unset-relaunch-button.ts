@@ -19,7 +19,7 @@ export function unsetRelaunchButton(
     node.setRelaunchData({})
     return
   }
-  const relaunchButtonsData = getRelaunchButtonsData(node)
+  let relaunchButtonsData = getRelaunchButtonsData(node)
   if (typeof relaunchButtonsData[relaunchButtonId] !== 'undefined') {
     delete relaunchButtonsData[relaunchButtonId]
   }
