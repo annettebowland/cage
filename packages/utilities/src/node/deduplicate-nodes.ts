@@ -8,8 +8,8 @@
 export function deduplicateNodes<Node extends SceneNode>(
   nodes: Array<Node>
 ): Array<Node> {
-  const result: Record<string, Node> = {}
-  for (const node of nodes) {
+  let result: Record<string, Node> = {}
+  for (let node of nodes) {
     result[node.id] = node
   }
   return Object.values(result)
