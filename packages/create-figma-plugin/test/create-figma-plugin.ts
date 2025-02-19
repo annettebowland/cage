@@ -7,7 +7,7 @@ import { rimraf } from 'rimraf'
 
 import { createFigmaPluginAsync } from '../src/create-figma-plugin-async.js'
 
-let __dirname = dirname(fileURLToPath(import.meta.url))
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 test('empty', async function (t) {
   t.plan(9)
