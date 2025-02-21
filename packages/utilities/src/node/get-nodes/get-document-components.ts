@@ -6,9 +6,9 @@ import { traverseNode } from '../traverse-node.js'
  * @category Node
  */
 export function getDocumentComponents(): Array<ComponentNode> {
-  let result: Array<ComponentNode> = []
-  for (let page of figma.root.children) {
-    for (let node of page.children) {
+  const result: Array<ComponentNode> = []
+  for (const page of figma.root.children) {
+    for (const node of page.children) {
       traverseNode(
         node,
         function (node: SceneNode): void {
