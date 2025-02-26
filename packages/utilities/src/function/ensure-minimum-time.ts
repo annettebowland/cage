@@ -9,9 +9,9 @@ export function ensureMinimumTime<S, T extends any[]>(
   callback: (...args: T) => Promise<S>
 ): (...args: T) => Promise<S> {
   return async function (...args: T): Promise<S> {
-    let startTimestamp = Date.now()
-    let result = await callback(...args)
-    let elapsedTime = Date.now() - startTimestamp
+    const startTimestamp = Date.now()
+    const result = await callback(...args)
+    const elapsedTime = Date.now() - startTimestamp
     if (elapsedTime >= minimumTime) {
       return result
     }
