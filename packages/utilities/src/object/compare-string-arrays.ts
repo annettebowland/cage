@@ -11,7 +11,7 @@ export function compareStringArrays(
   if (a.length !== b.length) {
     return false
   }
-  for (const index in a) {
+  for (let index in a) {
     if (a[index] !== b[index]) {
       return false
     }
