@@ -5,7 +5,7 @@
  * @category Image
  */
 export function createImagePaint(bytes: Uint8Array): ImagePaint {
-  const image = figma.createImage(bytes)
+  let image = figma.createImage(bytes)
   return {
     imageHash: image.hash,
     scaleMode: 'FILL',
