@@ -1,4 +1,4 @@
-let rehypePrettyCodeTheme = {
+const rehypePrettyCodeTheme = {
   name: 'create-figma-plugin',
   semanticHighlighting: true,
   tokenColors: [
@@ -64,11 +64,11 @@ export default {
     if (id !== 'utilities') {
       return text
     }
-    let backQuoteRegex = /^`([^`]+)`$/
-    let functionNameRegex = /^[^<(]+/
+    const backQuoteRegex = /^`([^`]+)`$/
+    const functionNameRegex = /^[^<(]+/
     return text.replace(backQuoteRegex, function (_, string) {
-      let matches = string.match(functionNameRegex)
-      let result = matches === null ? text : matches[0]
+      const matches = string.match(functionNameRegex)
+      const result = matches === null ? text : matches[0]
       return `\`${result}\``
     })
   },
