@@ -6,21 +6,21 @@ import { createCategories, parseExportedFunctionsAsync } from 'generate-ts-docs'
 import { writeFileAsync } from '../../common/src/write-file-async.js'
 import { renderFunctionDataToMarkdown } from './render-function-data-to-markdown.js'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+let __dirname = dirname(fileURLToPath(import.meta.url))
 
 async function main(): Promise<void> {
   try {
-    const globPatterns = [
+    let globPatterns = [
       'src/**/*.ts',
       '!src/mixed-values.ts',
       '!src/**/private/**/*'
     ]
-    const tsconfigFilePath = resolve(__dirname, '..', 'tsconfig.json')
-    const args = process.argv.slice(2)
+    let tsconfigFilePath = resolve(__dirname, '..', 'tsconfig.json')
+    let args = process.argv.slice(2)
     if (args.length === 0) {
       throw new Error('Need an output file path')
     }
-    const outputFilePath = args[0]
+    let outputFilePath = args[0]
     await generateDocsAsync(globPatterns, tsconfigFilePath, outputFilePath)
   } catch (error: any) {
     console.error(error.message) // eslint-disable-line no-console
@@ -34,11 +34,11 @@ async function generateDocsAsync(
   tsconfigFilePath: string,
   outputFilePath: string
 ): Promise<void> {
-  const lines: Array<string> = []
-  const functionsData = await parseExportedFunctionsAsync(globPatterns, {
+  let lines: Array<string> = []
+  let functionsData = await parseExportedFunctionsAsync(globPatterns, {
     tsconfigFilePath
   })
-  const categories = createCategories(functionsData)
+  let categories = createCategories(functionsData)
   lines.push('---')
   lines.push('{')
   lines.push('  "order": 5,')
@@ -67,7 +67,7 @@ async function generateDocsAsync(
     'When used with the `build-figma-plugin` CLI, only the functions explicitly imported by your plugin/widget will be included in the generated JavaScript bundle(s).'
   )
   lines.push('')
-  for (const category of categories) {
+  for (let category of categories) {
     lines.push(`## ${category.name}`)
     lines.push('')
     lines.push('```ts')
@@ -77,8 +77,8 @@ async function generateDocsAsync(
       )
     } else {
       lines.push('import {')
-      const functionNames: Array<string> = []
-      for (const { name } of category.functionsData) {
+      let functionNames: Array<string> = []
+      for (let { name } of category.functionsData) {
         functionNames.push(`  ${name}`)
       }
       lines.push(functionNames.join(',\n'))
@@ -86,7 +86,7 @@ async function generateDocsAsync(
     }
     lines.push('```')
     lines.push('')
-    for (const functionData of category.functionsData) {
+    for (let functionData of category.functionsData) {
       lines.push(
         renderFunctionDataToMarkdown(functionData, {
           headerLevel: 3
