@@ -4,13 +4,13 @@ import { fileURLToPath } from 'node:url'
 
 import { pathExists } from 'path-exists'
 
-let __dirname = dirname(fileURLToPath(import.meta.url))
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export async function copyTemplateAsync(
   templateName: string,
   pluginDirectoryPath: string
 ): Promise<void> {
-  let templateDirectory = resolve(
+  const templateDirectory = resolve(
     __dirname,
     '..',
     '..',
@@ -21,9 +21,9 @@ export async function copyTemplateAsync(
     await fs.mkdir(pluginDirectoryPath, { mode: 0o2775 })
   }
   await fs.cp(templateDirectory, pluginDirectoryPath, { recursive: true })
-  let gitIgnoreFilePath = join(pluginDirectoryPath, 'gitignore')
+  const gitIgnoreFilePath = join(pluginDirectoryPath, 'gitignore')
   if ((await pathExists(gitIgnoreFilePath)) === true) {
-    let newFilePath = join(pluginDirectoryPath, '.gitignore')
+    const newFilePath = join(pluginDirectoryPath, '.gitignore')
     await fs.rename(gitIgnoreFilePath, newFilePath)
   }
 }
