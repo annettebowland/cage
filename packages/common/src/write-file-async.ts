@@ -7,7 +7,7 @@ export async function writeFileAsync(
   outputFilePath: string,
   fileContents: string | Buffer
 ): Promise<void> {
-  let directoryPath = dirname(outputFilePath)
+  const directoryPath = dirname(outputFilePath)
   if ((await pathExists(directoryPath)) === false) {
     await fs.mkdir(directoryPath, { recursive: true })
   }
