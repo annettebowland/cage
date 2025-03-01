@@ -1,4 +1,4 @@
-let DEFAULT_SETTINGS_KEY = 'settings'
+const DEFAULT_SETTINGS_KEY = 'settings'
 
 /**
  * Loads your plugin/widget’s settings (stored locally on the user’s computer under
@@ -12,7 +12,7 @@ export async function loadSettingsAsync<Settings>(
   defaultSettings: Settings,
   settingsKey = DEFAULT_SETTINGS_KEY
 ): Promise<Settings> {
-  let settings: Settings = await figma.clientStorage.getAsync(settingsKey)
+  const settings: Settings = await figma.clientStorage.getAsync(settingsKey)
   if (typeof settings === 'undefined') {
     return defaultSettings
   }
