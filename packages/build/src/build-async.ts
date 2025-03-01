@@ -10,36 +10,36 @@ import { typeCheckBuild } from './utilities/type-check/type-check-build.js'
 export async function buildAsync(
   options: BuildOptions & { clearPreviousLine: boolean; exitOnError: boolean }
 ): Promise<void> {
-  const { minify, outputDirectory, typecheck, clearPreviousLine, exitOnError } =
+  let { minify, outputDirectory, typecheck, clearPreviousLine, exitOnError } =
     options
-  const config = await readConfigAsync()
+  let config = await readConfigAsync()
   try {
     if (typecheck === true) {
-      const getTypeCheckElapsedTime = trackElapsedTime()
+      let getTypeCheckElapsedTime = trackElapsedTime()
       await buildCssModulesTypingsAsync() // This must occur before `typeCheckBuild`
       log.info('Typechecking...')
       typeCheckBuild()
-      const typeCheckElapsedTime = getTypeCheckElapsedTime()
+      let typeCheckElapsedTime = getTypeCheckElapsedTime()
       log.success(`Typechecked in ${typeCheckElapsedTime}`, {
         clearPreviousLine
       })
       log.info('Building...')
-      const getBuildElapsedTime = trackElapsedTime()
+      let getBuildElapsedTime = trackElapsedTime()
       await Promise.all([
         buildBundlesAsync({ config, minify, outputDirectory }),
         buildManifestAsync({ config, minify, outputDirectory })
       ])
-      const buildElapsedTime = getBuildElapsedTime()
+      let buildElapsedTime = getBuildElapsedTime()
       log.success(`Built in ${buildElapsedTime}`, { clearPreviousLine })
     } else {
       log.info('Building...')
-      const getBuildElapsedTime = trackElapsedTime()
+      let getBuildElapsedTime = trackElapsedTime()
       await Promise.all([
         buildCssModulesTypingsAsync(),
         buildBundlesAsync({ config, minify, outputDirectory }),
         buildManifestAsync({ config, minify, outputDirectory })
       ])
-      const buildElapsedTime = getBuildElapsedTime()
+      let buildElapsedTime = getBuildElapsedTime()
       log.success(`Built in ${buildElapsedTime}`, { clearPreviousLine })
     }
   } catch (error: any) {
