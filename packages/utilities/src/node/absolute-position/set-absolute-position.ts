@@ -11,9 +11,9 @@ export function setAbsolutePosition(
   if (typeof vector.x === 'undefined' && typeof vector.y === 'undefined') {
     throw new Error('Need at least one of `x` or `y`')
   }
-  let x = typeof vector.x === 'undefined' ? null : vector.x
-  let y = typeof vector.y === 'undefined' ? null : vector.y
-  let parentNode = node.parent
+  const x = typeof vector.x === 'undefined' ? null : vector.x
+  const y = typeof vector.y === 'undefined' ? null : vector.y
+  const parentNode = node.parent
   while (parentNode !== null && parentNode.type !== 'PAGE') {
     if (parentNode.type === 'FRAME' || parentNode.type === 'SECTION') {
       if (x !== null) {
