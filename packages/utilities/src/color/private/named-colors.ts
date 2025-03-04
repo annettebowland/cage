@@ -1,6 +1,6 @@
 // Adapted from https://github.com/bahamas10/css-color-names/blob/a981685d57b3bed64f5c2a2a0027478b44f14cb5/css-color-names.json
 
-export let NAMED_COLORS: Record<string, string> = {
+export const NAMED_COLORS: Record<string, string> = {
   aliceblue: 'F0F8FF',
   antiquewhite: 'FAEBD7',
   aqua: '00FFFF',
