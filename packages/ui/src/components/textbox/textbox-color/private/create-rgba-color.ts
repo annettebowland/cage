@@ -17,7 +17,7 @@ export function createRgbaColor(
   ) {
     return null
   }
-  let rgb = convertHexColorToRgbColor(hexColor)
+  const rgb = convertHexColorToRgbColor(hexColor)
   if (rgb === null) {
     return null
   }
