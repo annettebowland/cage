@@ -7,10 +7,10 @@
 export async function createCanvasElementFromImageElement(
   imageElement: HTMLImageElement
 ): Promise<HTMLCanvasElement> {
-  const canvasElement = document.createElement('canvas')
+  let canvasElement = document.createElement('canvas')
   canvasElement.width = imageElement.width
   canvasElement.height = imageElement.height
-  const context = canvasElement.getContext('2d') as CanvasRenderingContext2D
+  let context = canvasElement.getContext('2d') as CanvasRenderingContext2D
   context.drawImage(imageElement, 0, 0)
   return canvasElement
 }
