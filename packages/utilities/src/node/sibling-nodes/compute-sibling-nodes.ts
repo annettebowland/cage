@@ -9,11 +9,11 @@ import { getParentNode } from '../get-nodes/get-parent-node.js'
 export function computeSiblingNodes<Node extends SceneNode>(
   nodes: Array<Node>
 ): Array<Array<Node>> {
-  let groups = resolveGroups(nodes)
-  let result: Array<Array<Node>> = []
-  for (let group of groups) {
-    let parentNode = getParentNode(group[0])
-    let siblingNodes = group
+  const groups = resolveGroups(nodes)
+  const result: Array<Array<Node>> = []
+  for (const group of groups) {
+    const parentNode = getParentNode(group[0])
+    const siblingNodes = group
       .map(function (node: Node): { index: number; node: Node } {
         return {
           index: parentNode.children.indexOf(node),
@@ -34,10 +34,10 @@ export function computeSiblingNodes<Node extends SceneNode>(
 function resolveGroups<Node extends SceneNode>(
   nodes: Array<Node>
 ): Array<Array<Node>> {
-  let result: Record<string, Array<Node>> = {}
-  for (let node of nodes) {
-    let parentNode = getParentNode(node)
-    let parentId = parentNode.id
+  const result: Record<string, Array<Node>> = {}
+  for (const node of nodes) {
+    const parentNode = getParentNode(node)
+    const parentId = parentNode.id
     if (parentId in result === false) {
       result[parentId] = []
     }
