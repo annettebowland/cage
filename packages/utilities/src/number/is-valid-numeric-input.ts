@@ -18,12 +18,12 @@ export function isValidNumericInput(
   value: string,
   options: { integersOnly: boolean } = { integersOnly: false }
 ): boolean {
-  var split = (value[0] === '-' ? value.substring(1) : value).split(
+  const split = (value[0] === '-' ? value.substring(1) : value).split(
     operatorRegex
   )
   let i = -1
   while (++i < split.length) {
-    var operand = split[i]
+    const operand = split[i]
     if (
       (operand === '' && i !== split.length - 1) ||
       (options.integersOnly === true
