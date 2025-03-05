@@ -17,18 +17,18 @@ export async function createFigmaPluginAsync(options: {
   template?: string
 }): Promise<void> {
   try {
-    const templateName = await resolveTemplateNameAsync(options.template)
-    const templateType =
+    let templateName = await resolveTemplateNameAsync(options.template)
+    let templateType =
       templateName.indexOf('plugin/') === 0 ? 'plugin' : 'widget'
-    const directoryName =
+    let directoryName =
       typeof options.name !== 'undefined'
         ? options.name
         : basename(templateName)
-    const directoryPath = await resolveDirectoryPathAsync(directoryName)
+    let directoryPath = await resolveDirectoryPathAsync(directoryName)
     log.info(`Copying "${templateName}" template...`)
     await copyTemplateAsync(templateName, directoryPath)
     log.info('Resolving package versions...')
-    const versions = await resolveCreateFigmaPluginLatestStableVersions()
+    let versions = await resolveCreateFigmaPluginLatestStableVersions()
     await interpolateValuesIntoFilesAsync(directoryPath, {
       id: slugify(directoryName),
       name: createName(directoryName),
