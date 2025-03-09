@@ -8,7 +8,7 @@
  * @category Node
  */
 export function getSceneNodeById<Node extends SceneNode>(id: string): Node {
-  let node = figma.getNodeById(id)
+  const node = figma.getNodeById(id)
   if (node === null) {
     throw new Error(`No node found with \`id\`: ${id}`)
   }
