@@ -1,7 +1,7 @@
-const EMPTY_STRING = ''
+let EMPTY_STRING = ''
 
-const fractionalPartRegex = /\.([^.]+)/
-const nonDigitRegex = /[^\d.]/
+let fractionalPartRegex = /\.([^.]+)/
+let nonDigitRegex = /[^\d.]/
 
 export function formatEvaluatedValue(
   evaluatedValue: null | number,
@@ -11,7 +11,7 @@ export function formatEvaluatedValue(
   if (evaluatedValue === null) {
     return EMPTY_STRING
   }
-  const significantFiguresCount = countSignificantFigures(
+  let significantFiguresCount = countSignificantFigures(
     nonDigitRegex.test(value) === true ? `${evaluatedValue}` : value
   )
   return appendSuffix(
@@ -21,7 +21,7 @@ export function formatEvaluatedValue(
 }
 
 function countSignificantFigures(value: string): number {
-  const result = fractionalPartRegex.exec(value)
+  let result = fractionalPartRegex.exec(value)
   if (result === null) {
     return 0
   }
@@ -35,12 +35,12 @@ function formatSignificantFigures(
   if (significantFiguresCount === 0) {
     return `${value}`
   }
-  const result = fractionalPartRegex.exec(`${value}`)
+  let result = fractionalPartRegex.exec(`${value}`)
   if (result === null) {
     return `${value}.${'0'.repeat(significantFiguresCount)}`
   }
-  const fractionalPart = result[1]
-  const count = significantFiguresCount - fractionalPart.length
+  let fractionalPart = result[1]
+  let count = significantFiguresCount - fractionalPart.length
   return `${value}${'0'.repeat(count)}`
 }
 
