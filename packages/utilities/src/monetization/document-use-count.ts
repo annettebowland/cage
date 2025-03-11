@@ -2,7 +2,7 @@ type DocumentUseCountPluginData = {
   useCount: number
 }
 
-const DEFAULT_KEY = 'documentUseCount'
+let DEFAULT_KEY = 'documentUseCount'
 
 /**
  * Returns the plugin’s use count for the current document.
@@ -12,11 +12,11 @@ const DEFAULT_KEY = 'documentUseCount'
  * @category Monetization
  */
 export function getDocumentUseCount(key = DEFAULT_KEY): number {
-  const value = figma.root.getPluginData(key)
+  let value = figma.root.getPluginData(key)
   if (value === '') {
     return 0
   }
-  const pluginData: DocumentUseCountPluginData = JSON.parse(value)
+  let pluginData: DocumentUseCountPluginData = JSON.parse(value)
   return pluginData.useCount
 }
 
@@ -29,8 +29,8 @@ export function getDocumentUseCount(key = DEFAULT_KEY): number {
  * @category Monetization
  */
 export function incrementDocumentUseCount(key = DEFAULT_KEY): number {
-  const useCount = getDocumentUseCount(key)
-  const pluginData: DocumentUseCountPluginData = {
+  let useCount = getDocumentUseCount(key)
+  let pluginData: DocumentUseCountPluginData = {
     useCount: useCount + 1
   }
   figma.root.setPluginData(key, JSON.stringify(pluginData))
@@ -45,7 +45,7 @@ export function incrementDocumentUseCount(key = DEFAULT_KEY): number {
  * @category Monetization
  */
 export function resetDocumentUseCount(key = DEFAULT_KEY): void {
-  const pluginData: DocumentUseCountPluginData = {
+  let pluginData: DocumentUseCountPluginData = {
     useCount: 0
   }
   figma.root.setPluginData(key, JSON.stringify(pluginData))
