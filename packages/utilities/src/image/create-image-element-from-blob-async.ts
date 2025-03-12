@@ -9,7 +9,7 @@ export async function createImageElementFromBlobAsync(
   blob: Blob
 ): Promise<HTMLImageElement> {
   return new Promise<HTMLImageElement>(function (resolve, reject) {
-    let imageElement = new Image()
+    const imageElement = new Image()
     imageElement.onload = function () {
       resolve(imageElement)
     }
