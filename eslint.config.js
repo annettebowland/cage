@@ -39,7 +39,7 @@ export default tsEslint.config(
         }
       ],
       '@typescript-eslint/no-use-before-define': ['off'],
-      '@typescript-eslint/no-const-requires': ['off'],
+      '@typescript-eslint/no-let-requires': ['off'],
       'prettier/prettier': [
         'error',
         { semi: false, singleQuote: true, trailingComma: 'none' }
