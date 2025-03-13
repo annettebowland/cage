@@ -25,17 +25,17 @@ export function useForm<State>(
     name: undefined | Name
   ) => void
 } {
-  let { close, submit, transform, validate } = options
+  const { close, submit, transform, validate } = options
 
-  let [formState, setState] = useState(initialState)
+  const [formState, setState] = useState(initialState)
 
-  let setFormState = useCallback(
+  const setFormState = useCallback(
     function <Name extends keyof State>(value: State[Name], name?: Name) {
       if (typeof name === 'undefined') {
         throw new Error('`name` is `undefined`')
       }
       setState(function (previousState: State): State {
-        let newState = {
+        const newState = {
           ...previousState,
           ...{ [name]: value }
         }
@@ -45,7 +45,7 @@ export function useForm<State>(
     [transform]
   )
 
-  let handleSubmit = useCallback(
+  const handleSubmit = useCallback(
     function (): void {
       if (typeof validate !== 'undefined' && validate(formState) === false) {
         return
@@ -56,7 +56,7 @@ export function useForm<State>(
   )
   useWindowKeyDown('Enter', handleSubmit)
 
-  let handleClose = useCallback(
+  const handleClose = useCallback(
     function (): void {
       close(formState)
     },
@@ -66,10 +66,10 @@ export function useForm<State>(
 
   useFocusTrap()
 
-  let disabled =
+  const disabled =
     typeof validate !== 'undefined' ? validate(formState) === false : false
 
-  let initialFocus = useInitialFocus()
+  const initialFocus = useInitialFocus()
   return {
     disabled,
     formState,
