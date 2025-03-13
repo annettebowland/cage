@@ -4,11 +4,11 @@ import {
 } from '@create-figma-plugin/utilities'
 
 export function normalizeUserInputColor(string: string): null | string {
-  let parsedNamedColor = convertNamedColorToHexColor(string)
+  const parsedNamedColor = convertNamedColorToHexColor(string)
   if (parsedNamedColor !== null) {
     return parsedNamedColor
   }
-  let hexColor = createHexColor(string).toUpperCase()
+  const hexColor = createHexColor(string).toUpperCase()
   if (isValidHexColor(hexColor) === false) {
     return null
   }
