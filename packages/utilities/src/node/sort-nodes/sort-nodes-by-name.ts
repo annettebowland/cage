@@ -14,16 +14,16 @@ export function sortNodesByName<Node extends SceneNode>(
     return nodes.slice()
   }
   return nodes.slice().sort(function (a: Node, b: Node): number {
-    let aName = a.name.toLowerCase()
-    let bName = b.name.toLowerCase()
+    const aName = a.name.toLowerCase()
+    const bName = b.name.toLowerCase()
     if (aName !== bName) {
       return naturalCompare(bName, aName)
     }
-    let y = b.y - a.y
+    const y = b.y - a.y
     if (y !== 0) {
       return y
     }
-    let x = b.x - a.x
+    const x = b.x - a.x
     if (x !== 0) {
       return x
     }
