@@ -15,7 +15,7 @@ export function convertHexColorToRgbColor(hexColor: string): null | RGB {
     return null
   }
   try {
-    let { red, green, blue } = hexRgb(hexColor)
+    const { red, green, blue } = hexRgb(hexColor)
     return {
       b: blue / 255,
       g: green / 255,
