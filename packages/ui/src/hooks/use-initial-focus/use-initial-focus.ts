@@ -1,6 +1,6 @@
 import { useEffect } from 'preact/hooks'
 
-let INITIAL_FOCUS_DATA_ATTRIBUTE_NAME = 'data-initial-focus'
+const INITIAL_FOCUS_DATA_ATTRIBUTE_NAME = 'data-initial-focus'
 
 export type InitialFocus = {
   [INITIAL_FOCUS_DATA_ATTRIBUTE_NAME]: true
@@ -8,7 +8,7 @@ export type InitialFocus = {
 
 export function useInitialFocus(): InitialFocus {
   useEffect(function (): void {
-    let focusableElements = document.querySelectorAll<HTMLElement>(
+    const focusableElements = document.querySelectorAll<HTMLElement>(
       `[${INITIAL_FOCUS_DATA_ATTRIBUTE_NAME}]:not([tabindex="-1"]`
     )
     if (focusableElements.length === 0) {
@@ -17,10 +17,10 @@ export function useInitialFocus(): InitialFocus {
       )
     }
     // Find and focus the first `checked` radio button `input` element
-    let checkedRadioButtonInputElement = Array.prototype.slice
+    const checkedRadioButtonInputElement = Array.prototype.slice
       .call(focusableElements)
       .find(function (focusableElement: HTMLElement) {
-        let inputElement = focusableElement as HTMLInputElement
+        const inputElement = focusableElement as HTMLInputElement
         return inputElement.type === 'radio' && inputElement.checked === true
       })
     if (typeof checkedRadioButtonInputElement !== 'undefined') {
