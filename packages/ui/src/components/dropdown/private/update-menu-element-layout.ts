@@ -10,43 +10,43 @@ export function updateMenuElementLayout(
   menuElement: HTMLDivElement,
   selectedId: Id
 ) {
-  const rootElementBoundingClientRect = rootElement.getBoundingClientRect()
-  const rootWidth = rootElement.offsetWidth
-  const rootHeight = rootElement.offsetHeight
-  const rootLeft = rootElementBoundingClientRect.left
-  const rootTop = rootElementBoundingClientRect.top
+  let rootElementBoundingClientRect = rootElement.getBoundingClientRect()
+  let rootWidth = rootElement.offsetWidth
+  let rootHeight = rootElement.offsetHeight
+  let rootLeft = rootElementBoundingClientRect.left
+  let rootTop = rootElementBoundingClientRect.top
 
   menuElement.style.minWidth = `${rootWidth}px`
 
-  const menuElementMaxWidth = window.innerWidth - 2 * VIEWPORT_MARGIN
+  let menuElementMaxWidth = window.innerWidth - 2 * VIEWPORT_MARGIN
   menuElement.style.maxWidth = `${menuElementMaxWidth}px`
 
-  const menuElementMaxHeight = window.innerHeight - 2 * VIEWPORT_MARGIN
+  let menuElementMaxHeight = window.innerHeight - 2 * VIEWPORT_MARGIN
   menuElement.style.maxHeight = `${menuElementMaxHeight}px`
 
-  const menuWidth = menuElement.offsetWidth
-  const menuHeight = menuElement.offsetHeight
-  const menuScrollHeight = menuElement.scrollHeight
-  const menuPaddingTop = parseInt(
+  let menuWidth = menuElement.offsetWidth
+  let menuHeight = menuElement.offsetHeight
+  let menuScrollHeight = menuElement.scrollHeight
+  let menuPaddingTop = parseInt(
     window.getComputedStyle(menuElement).paddingTop,
     10
   )
-  const labelElement = getSelectedLabelElement(menuElement, selectedId)
+  let labelElement = getSelectedLabelElement(menuElement, selectedId)
 
-  const left = computeLeft({
+  let left = computeLeft({
     menuWidth,
     rootLeft
   })
   menuElement.style.left = `${left}px`
 
-  const top = computeTop({
+  let top = computeTop({
     menuHeight,
     rootTop,
     selectedTop: labelElement.offsetTop
   })
   menuElement.style.top = `${top}px`
 
-  const isScrollable = menuScrollHeight > menuHeight
+  let isScrollable = menuScrollHeight > menuHeight
   if (isScrollable === false) {
     return
   }
@@ -64,7 +64,7 @@ function getSelectedLabelElement(
   menuElement: HTMLDivElement,
   selectedId: Id
 ): HTMLLabelElement {
-  const inputElement = menuElement.querySelector<HTMLInputElement>(
+  let inputElement = menuElement.querySelector<HTMLInputElement>(
     selectedId === INVALID_ID
       ? `[${ITEM_ID_DATA_ATTRIBUTE_NAME}]`
       : `[${ITEM_ID_DATA_ATTRIBUTE_NAME}='${selectedId}']`
@@ -72,7 +72,7 @@ function getSelectedLabelElement(
   if (inputElement === null) {
     throw new Error('`inputElement` is `null`')
   }
-  const labelElement = inputElement.parentElement
+  let labelElement = inputElement.parentElement
   if (labelElement === null) {
     throw new Error('`labelElement` is `null`')
   }
@@ -80,11 +80,11 @@ function getSelectedLabelElement(
 }
 
 function computeLeft(options: { menuWidth: number; rootLeft: number }): number {
-  const { menuWidth, rootLeft } = options
+  let { menuWidth, rootLeft } = options
   if (rootLeft <= VIEWPORT_MARGIN) {
     return VIEWPORT_MARGIN
   }
-  const viewportWidth = window.innerWidth
+  let viewportWidth = window.innerWidth
   if (rootLeft + menuWidth > viewportWidth - VIEWPORT_MARGIN) {
     return viewportWidth - VIEWPORT_MARGIN - menuWidth
   }
@@ -96,8 +96,8 @@ function computeTop(options: {
   rootTop: number
   selectedTop: number
 }): number {
-  const { menuHeight, rootTop, selectedTop } = options
-  const viewportHeight = window.innerHeight
+  let { menuHeight, rootTop, selectedTop } = options
+  let viewportHeight = window.innerHeight
   if (
     rootTop <= VIEWPORT_MARGIN ||
     menuHeight === viewportHeight - 2 * VIEWPORT_MARGIN
@@ -105,9 +105,9 @@ function computeTop(options: {
     return VIEWPORT_MARGIN
   }
   // Position the selected element at `rootTop`
-  const top = rootTop - selectedTop
-  const minimumTop = VIEWPORT_MARGIN
-  const maximumTop = viewportHeight - VIEWPORT_MARGIN - menuHeight
+  let top = rootTop - selectedTop
+  let minimumTop = VIEWPORT_MARGIN
+  let maximumTop = viewportHeight - VIEWPORT_MARGIN - menuHeight
   return restrictToRange(top, minimumTop, maximumTop)
 }
 
@@ -119,7 +119,7 @@ function computeScrollTop(options: {
   rootTop: number
   selectedTop: number
 }): number {
-  const {
+  let {
     menuHeight,
     menuPaddingTop,
     menuScrollHeight,
@@ -127,14 +127,14 @@ function computeScrollTop(options: {
     rootTop,
     selectedTop
   } = options
-  const restrictedRootTop = restrictToRange(
+  let restrictedRootTop = restrictToRange(
     rootTop,
     VIEWPORT_MARGIN,
     window.innerHeight - VIEWPORT_MARGIN - rootHeight + menuPaddingTop / 2
   )
-  const scrollTop = selectedTop - (restrictedRootTop - VIEWPORT_MARGIN)
-  const minimumScrollTop = 0
-  const maximumScrollTop = menuScrollHeight - menuHeight
+  let scrollTop = selectedTop - (restrictedRootTop - VIEWPORT_MARGIN)
+  let minimumScrollTop = 0
+  let maximumScrollTop = menuScrollHeight - menuHeight
   return restrictToRange(scrollTop, minimumScrollTop, maximumScrollTop)
 }
 
