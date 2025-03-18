@@ -17,7 +17,7 @@ export async function traverseNodeAsync(
     (typeof stopTraversalAsync !== 'function' ||
       (await stopTraversalAsync(node)) === false)
   ) {
-    for (let childNode of node.children) {
+    for (const childNode of node.children) {
       await traverseNodeAsync(childNode, processNodeAsync, stopTraversalAsync)
     }
   }
