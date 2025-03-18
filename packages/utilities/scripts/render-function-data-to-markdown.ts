@@ -4,17 +4,17 @@ import {
   TypeParameterData
 } from 'generate-ts-docs'
 
-let INDENT_SIZE = 2
-let EN_DASH = '–'
+const INDENT_SIZE = 2
+const EN_DASH = '–'
 
 export function renderFunctionDataToMarkdown(
   functionData: FunctionData,
   options?: { headerLevel: number }
 ): string {
-  let headerLevel = typeof options === 'undefined' ? 1 : options.headerLevel
-  let { description, name, parameters, type, typeParameters, returnType } =
+  const headerLevel = typeof options === 'undefined' ? 1 : options.headerLevel
+  const { description, name, parameters, type, typeParameters, returnType } =
     functionData
-  let lines: Array<string> = []
+  const lines: Array<string> = []
   lines.push(
     `${'#'.repeat(headerLevel)} \`${createFunctionTitle(
       name,
@@ -37,7 +37,7 @@ export function renderFunctionDataToMarkdown(
   if (typeParameters !== null && typeParameters.length > 0) {
     lines.push('***Type parameters***')
     lines.push('')
-    for (let typeParameter of typeParameters) {
+    for (const typeParameter of typeParameters) {
       lines.push(stringifyTypeParameter(typeParameter, 0))
     }
     lines.push('')
@@ -45,7 +45,7 @@ export function renderFunctionDataToMarkdown(
   if (parameters !== null && parameters.length > 0) {
     lines.push('***Parameters***')
     lines.push('')
-    for (let parameter of parameters) {
+    for (const parameter of parameters) {
       lines.push(stringifyParameter(parameter, 0))
     }
     lines.push('')
@@ -73,14 +73,14 @@ function createFunctionTitle(
   if (typeParameters === null || parameters === null) {
     return name
   }
-  let typeParameterNames = typeParameters.map(function ({
+  const typeParameterNames = typeParameters.map(function ({
     name
   }: TypeParameterData): string {
     return name
   })
-  let typeParametersString =
+  const typeParametersString =
     typeParameterNames.length === 0 ? '' : `<${typeParameterNames.join(', ')}>`
-  let parameterNames = parameters.map(function ({
+  const parameterNames = parameters.map(function ({
     name,
     rest
   }: ParameterData): string {
@@ -89,7 +89,7 @@ function createFunctionTitle(
     }
     return name
   })
-  let firstOptionalParameterIndex = parameters.findIndex(function ({
+  const firstOptionalParameterIndex = parameters.findIndex(function ({
     optional
   }: ParameterData): boolean {
     return optional === true
@@ -98,11 +98,11 @@ function createFunctionTitle(
     // No optional parameters
     return `${name}${typeParametersString}(${parameterNames.join(', ')})`
   }
-  let requiredParameters = parameterNames.slice(
+  const requiredParameters = parameterNames.slice(
     0,
     firstOptionalParameterIndex
   )
-  let optionalParameters = parameterNames.slice(firstOptionalParameterIndex)
+  const optionalParameters = parameterNames.slice(firstOptionalParameterIndex)
   if (requiredParameters.length === 0) {
     return `${name}${typeParametersString}([${optionalParameters.join(', ')}])`
   }
@@ -115,7 +115,7 @@ function stringifyTypeParameter(
   { defaultType, name, type }: TypeParameterData,
   indent: number
 ) {
-  let line: Array<string> = []
+  const line: Array<string> = []
   line.push(`${' '.repeat(indent * INDENT_SIZE)}-`)
   line.push(`\`${name}\``)
   if (typeof type === 'string') {
@@ -132,7 +132,7 @@ function stringifyParameter(
   { description, name, optional, type }: ParameterData,
   indent: number
 ) {
-  let line: Array<string> = []
+  const line: Array<string> = []
   line.push(`${' '.repeat(indent * INDENT_SIZE)}-`)
   line.push(`\`${name}\``)
   line.push(`(\`${typeof type === 'string' ? type : type.type}\`)`)
@@ -145,9 +145,9 @@ function stringifyParameter(
   if (description !== null) {
     line.push(description)
   }
-  let lines = [line.join(' ')]
+  const lines = [line.join(' ')]
   if (typeof type !== 'string') {
-    for (let key of type.keys) {
+    for (const key of type.keys) {
       lines.push(stringifyParameter(key, indent + 1))
     }
   }
