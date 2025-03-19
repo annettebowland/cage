@@ -1,7 +1,7 @@
-let RELAUNCH_BUTTONS_PLUGIN_DATA_KEY = 'relaunchButtons'
+const RELAUNCH_BUTTONS_PLUGIN_DATA_KEY = 'relaunchButtons'
 
 export function getRelaunchButtonsData(node: BaseNode): Record<string, string> {
-  let pluginData = node.getPluginData(RELAUNCH_BUTTONS_PLUGIN_DATA_KEY)
+  const pluginData = node.getPluginData(RELAUNCH_BUTTONS_PLUGIN_DATA_KEY)
   if (pluginData === '') {
     return {}
   }
