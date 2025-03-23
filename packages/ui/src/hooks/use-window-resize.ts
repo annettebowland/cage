@@ -3,7 +3,7 @@ import { useCallback, useEffect, useRef } from 'preact/hooks'
 export type ResizeBehaviorOnDoubleClick = 'minimize' | 'maximize'
 export type ResizeDirection = 'both' | 'horizontal' | 'vertical'
 
-const mapResizeDirectionToStyles: Record<
+let mapResizeDirectionToStyles: Record<
   ResizeDirection,
   { cursor: string; height: string; width: string }
 > = {
@@ -35,36 +35,36 @@ export function useWindowResize(
     resizeDirection?: ResizeDirection
   } = {}
 ): (size: { width: number; height: number }) => void {
-  const initialHeight = window.innerHeight
-  const initialWidth = window.innerWidth
+  let initialHeight = window.innerHeight
+  let initialWidth = window.innerWidth
 
-  const resizeBehaviorOnDoubleClick =
+  let resizeBehaviorOnDoubleClick =
     typeof options.resizeBehaviorOnDoubleClick === 'undefined'
       ? null
       : options.resizeBehaviorOnDoubleClick
-  const maxHeight =
+  let maxHeight =
     typeof options.maxHeight === 'undefined'
       ? Number.MAX_VALUE
       : options.maxHeight
-  const maxWidth =
+  let maxWidth =
     typeof options.maxWidth === 'undefined'
       ? Number.MAX_VALUE
       : options.maxWidth
-  const minHeight =
+  let minHeight =
     typeof options.minHeight === 'undefined' ? initialHeight : options.minHeight
-  const minWidth =
+  let minWidth =
     typeof options.minWidth === 'undefined' ? initialWidth : options.minWidth
-  const resizeDirection =
+  let resizeDirection =
     typeof options.resizeDirection === 'undefined'
       ? 'both'
       : options.resizeDirection
 
-  const windowSize = useRef({
+  let windowSize = useRef({
     height: initialHeight,
     width: initialWidth
   })
 
-  const setWindowSize = useCallback(
+  let setWindowSize = useCallback(
     function ({ width, height }: { width?: number; height?: number }) {
       if (typeof width === 'undefined' && typeof height === 'undefined') {
         throw new Error('Need at least one of `width` or `height`')
@@ -83,7 +83,7 @@ export function useWindowResize(
     [maxHeight, maxWidth, minHeight, minWidth, onWindowResize]
   )
 
-  const toggleWindowSize = useCallback(
+  let toggleWindowSize = useCallback(
     function (resizeDirection: ResizeDirection): void {
       if (resizeDirection === 'horizontal') {
         if (windowSize.current.width === initialWidth) {
@@ -139,8 +139,8 @@ export function useWindowResize(
 
   useEffect(
     function (): () => void {
-      const removeResizeHandleElements: Array<() => void> = []
-      const options = {
+      let removeResizeHandleElements: Array<() => void> = []
+      let options = {
         resizeDirection,
         setWindowSize,
         toggleWindowSize:
@@ -159,7 +159,7 @@ export function useWindowResize(
       }
       removeResizeHandleElements.push(createResizeHandleElement(options))
       return function (): void {
-        for (const removeResizeHandleElement of removeResizeHandleElements) {
+        for (let removeResizeHandleElement of removeResizeHandleElements) {
           removeResizeHandleElement()
         }
       }
@@ -184,14 +184,14 @@ function createResizeHandleElement(options: {
   setWindowSize: (windowSize: { width?: number; height?: number }) => void
   toggleWindowSize: null | ((resizeDirection: ResizeDirection) => void)
 }): () => void {
-  const { resizeDirection, setWindowSize, toggleWindowSize } = options
+  let { resizeDirection, setWindowSize, toggleWindowSize } = options
 
-  const resizeHandleElement = document.createElement('div')
+  let resizeHandleElement = document.createElement('div')
   document.body.append(resizeHandleElement)
-  const { cursor, height, width } = mapResizeDirectionToStyles[resizeDirection]
+  let { cursor, height, width } = mapResizeDirectionToStyles[resizeDirection]
   resizeHandleElement.style.cssText = `cursor: ${cursor}; position: fixed; z-index: var(--z-index-2); bottom: 0; right: 0; width: ${width}; height: ${height};`
 
-  const pointerDownCursorPosition: null | { x: number; y: number } = null
+  let pointerDownCursorPosition: null | { x: number; y: number } = null
   resizeHandleElement.addEventListener(
     'pointerdown',
     function (event: PointerEvent): void {
@@ -215,14 +215,14 @@ function createResizeHandleElement(options: {
       if (pointerDownCursorPosition === null) {
         return
       }
-      const width =
+      let width =
         resizeDirection === 'both' || resizeDirection === 'horizontal'
           ? Math.round(
               event.clientX +
                 (resizeHandleElement.offsetWidth - pointerDownCursorPosition.x)
             )
           : undefined
-      const height =
+      let height =
         resizeDirection === 'both' || resizeDirection === 'vertical'
           ? Math.round(
               event.clientY +
