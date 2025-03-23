@@ -15,10 +15,10 @@ export function useScrollableMenu(options: {
     event: Event.onMouseMove<HTMLElement>
   ) => void
 } {
-  var { itemIdDataAttributeName, menuElementRef, selectedId, setSelectedId } =
+  const { itemIdDataAttributeName, menuElementRef, selectedId, setSelectedId } =
     options
 
-  var getItemElements = useCallback(
+  const getItemElements = useCallback(
     function (): Array<HTMLElement> {
       return Array.from(
         getCurrentFromRef(menuElementRef).querySelectorAll<HTMLElement>(
@@ -31,12 +31,12 @@ export function useScrollableMenu(options: {
     [itemIdDataAttributeName, menuElementRef]
   )
 
-  var findIndexByItemId = useCallback(
+  const findIndexByItemId = useCallback(
     function (id: null | string): number {
       if (id === null) {
         return -1
       }
-      var index = getItemElements().findIndex(function (
+      const index = getItemElements().findIndex(function (
         element: HTMLElement
       ): boolean {
         return (element.getAttribute(itemIdDataAttributeName) as string) === id
@@ -49,20 +49,20 @@ export function useScrollableMenu(options: {
     [getItemElements, itemIdDataAttributeName]
   )
 
-  var updateScrollPosition = useCallback(
+  const updateScrollPosition = useCallback(
     function (id: string): void {
-      var itemElements = getItemElements()
-      var index = findIndexByItemId(id)
-      var selectedElement = itemElements[index]
-      var selectedElementOffsetTop =
+      const itemElements = getItemElements()
+      const index = findIndexByItemId(id)
+      const selectedElement = itemElements[index]
+      const selectedElementOffsetTop =
         selectedElement.getBoundingClientRect().top
-      var menuElement = getCurrentFromRef(menuElementRef)
-      var menuElementOffsetTop = menuElement.getBoundingClientRect().top
+      const menuElement = getCurrentFromRef(menuElementRef)
+      const menuElementOffsetTop = menuElement.getBoundingClientRect().top
       if (selectedElementOffsetTop < menuElementOffsetTop) {
         selectedElement.scrollIntoView()
         return
       }
-      var offsetBottom =
+      const offsetBottom =
         selectedElementOffsetTop + selectedElement.offsetHeight
       if (offsetBottom > menuElementOffsetTop + menuElement.offsetHeight) {
         selectedElement.scrollIntoView()
@@ -71,12 +71,12 @@ export function useScrollableMenu(options: {
     [findIndexByItemId, getItemElements, menuElementRef]
   )
 
-  var handleScrollableMenuKeyDown = useCallback(
+  const handleScrollableMenuKeyDown = useCallback(
     function (event: JSX.TargetedKeyboardEvent<HTMLElement>): void {
-      var key = event.key
+      const key = event.key
       if (key === 'ArrowDown' || key === 'ArrowUp') {
-        var itemElements = getItemElements()
-        var index = findIndexByItemId(selectedId)
+        const itemElements = getItemElements()
+        const index = findIndexByItemId(selectedId)
         let newIndex
         if (key === 'ArrowDown') {
           newIndex =
@@ -85,8 +85,8 @@ export function useScrollableMenu(options: {
           newIndex =
             index === -1 || index === 0 ? itemElements.length - 1 : index - 1
         }
-        var selectedElement = itemElements[newIndex]
-        var newSelectedId = selectedElement.getAttribute(
+        const selectedElement = itemElements[newIndex]
+        const newSelectedId = selectedElement.getAttribute(
           itemIdDataAttributeName
         ) as string
         setSelectedId(newSelectedId)
@@ -103,9 +103,9 @@ export function useScrollableMenu(options: {
     ]
   )
 
-  var handleScrollableMenuItemMouseMove = useCallback(
+  const handleScrollableMenuItemMouseMove = useCallback(
     function (event: JSX.TargetedMouseEvent<HTMLElement>): void {
-      var id = event.currentTarget.getAttribute(
+      const id = event.currentTarget.getAttribute(
         itemIdDataAttributeName
       ) as string
       if (id !== selectedId) {
