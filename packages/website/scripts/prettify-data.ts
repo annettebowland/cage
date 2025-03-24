@@ -5,9 +5,9 @@ import { pathExists } from 'path-exists'
 
 async function main(): Promise<void> {
   try {
-    const filePath = process.argv[2]
-    const data = JSON.parse(await fs.readFile(filePath, 'utf8'))
-    const result = data
+    let filePath = process.argv[2]
+    let data = JSON.parse(await fs.readFile(filePath, 'utf8'))
+    let result = data
       .slice()
       .sort(function (x: Record<string, any>, y: Record<string, any>): number {
         return x.name.localeCompare(y.name)
@@ -35,7 +35,7 @@ async function writeFileAsync(
   outputFilePath: string,
   fileContents: string
 ): Promise<void> {
-  const directoryPath = dirname(outputFilePath)
+  let directoryPath = dirname(outputFilePath)
   if ((await pathExists(directoryPath)) === false) {
     await fs.mkdir(directoryPath, { recursive: true })
   }
