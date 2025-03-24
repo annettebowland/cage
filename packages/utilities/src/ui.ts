@@ -15,11 +15,11 @@ export function showUI<Data extends Record<string, unknown>>(
   if (typeof __html__ === 'undefined') {
     throw new Error('No UI defined')
   }
-  let html = `<div id="create-figma-plugin"></div><script>document.body.classList.add('theme-${
+  const html = `<div id="create-figma-plugin"></div><script>document.body.classList.add('theme-${
     figma.editorType
-  }');let __FIGMA_COMMAND__='${
+  }');const __FIGMA_COMMAND__='${
     typeof figma.command === 'undefined' ? '' : figma.command
-  }';let __SHOW_UI_DATA__=${JSON.stringify(
+  }';const __SHOW_UI_DATA__=${JSON.stringify(
     typeof data === 'undefined' ? {} : data
   )};${__html__}</script>`
   figma.showUI(html, {
