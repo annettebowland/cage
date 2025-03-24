@@ -1,7 +1,7 @@
 import indentString from 'indent-string'
 import ts from 'typescript'
 
-let formatDiagnosticsHost: ts.FormatDiagnosticsHost = {
+const formatDiagnosticsHost: ts.FormatDiagnosticsHost = {
   getCanonicalFileName: function (fileName: string): string {
     return fileName
   },
@@ -14,7 +14,7 @@ let formatDiagnosticsHost: ts.FormatDiagnosticsHost = {
 export function formatTypeScriptErrorMessage(
   diagnostics: readonly ts.Diagnostic[]
 ) {
-  let string = ts.formatDiagnosticsWithColorAndContext(
+  const string = ts.formatDiagnosticsWithColorAndContext(
     diagnostics,
     formatDiagnosticsHost
   )
