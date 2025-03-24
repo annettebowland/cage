@@ -29,7 +29,7 @@ export async function buildBundlesAsync(options: {
   minify: boolean
   outputDirectory: string
 }): Promise<void> {
-  const { config, minify, outputDirectory } = options
+  let { config, minify, outputDirectory } = options
   await Promise.all([
     buildMainBundleAsync({
       config,
@@ -48,11 +48,11 @@ async function overrideEsbuildConfigAsync(
   buildOptions: BuildOptions,
   configGlobPattern: string
 ): Promise<BuildOptions> {
-  const filePaths = await globby(configGlobPattern, { absolute: true })
+  let filePaths = await globby(configGlobPattern, { absolute: true })
   if (filePaths.length === 0) {
     return buildOptions
   }
-  const overrideEsbuildConfig:
+  let overrideEsbuildConfig:
     | OverrideEsbuildConfig
     | { default: OverrideEsbuildConfig } = await importFresh(filePaths[0])
   if ('default' in overrideEsbuildConfig) {
@@ -66,10 +66,10 @@ async function buildMainBundleAsync(options: {
   minify: boolean
   outputDirectory: string
 }): Promise<void> {
-  const { config, minify, outputDirectory } = options
-  const js = createMainEntryFile(config)
+  let { config, minify, outputDirectory } = options
+  let js = createMainEntryFile(config)
   try {
-    const esbuildConfig: BuildOptions = {
+    let esbuildConfig: BuildOptions = {
       bundle: true,
       logLevel: 'silent',
       minify,
@@ -97,8 +97,8 @@ async function buildMainBundleAsync(options: {
 }
 
 function createMainEntryFile(config: Config): string {
-  const { relaunchButtons, ...command } = config
-  const entryFiles: Array<EntryFile> = []
+  let { relaunchButtons, ...command } = config
+  let entryFiles: Array<EntryFile> = []
   extractEntryFile(command, 'main', entryFiles)
   if (entryFiles.length === 0) {
     throw new Error('Need a `main` entry point')
@@ -107,8 +107,8 @@ function createMainEntryFile(config: Config): string {
     extractEntryFiles(relaunchButtons, 'main', entryFiles)
   }
   return `
-    const modules = ${createRequireCode(entryFiles)};
-    const commandId = (${
+    let modules = ${createRequireCode(entryFiles)};
+    let commandId = (${
       entryFiles.length === 1
     } || typeof figma.command === 'undefined' || figma.command === '' || figma.command === 'generate') ? '${
       entryFiles[0].commandId
@@ -122,13 +122,13 @@ async function buildUiBundleAsync(options: {
   minify: boolean
   outputDirectory: string
 }): Promise<void> {
-  const { config, minify, outputDirectory } = options
-  const js = createUiEntryFile(config)
+  let { config, minify, outputDirectory } = options
+  let js = createUiEntryFile(config)
   if (js === null) {
     return
   }
   try {
-    const esbuildConfig: BuildOptions = {
+    let esbuildConfig: BuildOptions = {
       bundle: true,
       jsxFactory: 'h',
       jsxFragment: 'Fragment',
@@ -160,8 +160,8 @@ async function buildUiBundleAsync(options: {
 }
 
 function createUiEntryFile(config: Config): null | string {
-  const { relaunchButtons, ...command } = config
-  const modules: Array<EntryFile> = []
+  let { relaunchButtons, ...command } = config
+  let modules: Array<EntryFile> = []
   extractEntryFile(command, 'ui', modules)
   if (relaunchButtons !== null) {
     extractEntryFiles(relaunchButtons, 'ui', modules)
@@ -170,9 +170,9 @@ function createUiEntryFile(config: Config): null | string {
     return null
   }
   return `
-    const rootNode = document.getElementById('create-figma-plugin');
-    const modules = ${createRequireCode(modules)};
-    const commandId = __FIGMA_COMMAND__ === '' ? '${
+    let rootNode = document.getElementById('create-figma-plugin');
+    let modules = ${createRequireCode(modules)};
+    let commandId = __FIGMA_COMMAND__ === '' ? '${
       modules[0].commandId
     }' : __FIGMA_COMMAND__;
     if (typeof modules[commandId] === 'undefined') {
@@ -189,7 +189,7 @@ function extractEntryFiles(
   key: 'ui' | 'main',
   result: Array<EntryFile>
 ): void {
-  for (const item of items) {
+  for (let item of items) {
     if ('separator' in item) {
       continue
     }
@@ -202,11 +202,11 @@ function extractEntryFile(
   key: 'ui' | 'main',
   result: Array<EntryFile>
 ): void {
-  const commandId = command.commandId
+  let commandId = command.commandId
   if (commandId !== null) {
-    const item = command[key] as null | ConfigFile
+    let item = command[key] as null | ConfigFile
     if (item !== null) {
-      const { src, handler } = item
+      let { src, handler } = item
       result.push({
         commandId,
         handler,
@@ -220,8 +220,8 @@ function extractEntryFile(
 }
 
 function createRequireCode(entryFiles: Array<EntryFile>): string {
-  const code: Array<string> = []
-  for (const entryFile of entryFiles) {
+  let code: Array<string> = []
+  for (let entryFile of entryFiles) {
     code.push(
       `'${entryFile.commandId}':require('./${entryFile.src}')['${entryFile.handler}']`
     )
