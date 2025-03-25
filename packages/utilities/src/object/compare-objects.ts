@@ -21,7 +21,7 @@ export function compareObjects(a: any, b: any): boolean {
     if (a.length !== b.length) {
       return false
     }
-    for (const index in a) {
+    for (let index in a) {
       if (compareObjects(a[index], b[index]) === false) {
         return false
       }
@@ -41,7 +41,7 @@ export function compareObjects(a: any, b: any): boolean {
   if (Object.keys(a).length !== Object.keys(b).length) {
     return false
   }
-  for (const key in a) {
+  for (let key in a) {
     if (compareObjects(a[key], b[key]) === false) {
       return false
     }
