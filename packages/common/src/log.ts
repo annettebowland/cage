@@ -1,6 +1,6 @@
 import { blue, green, red } from 'kleur/colors'
 
-let ESC = '\u001B['
+const ESC = '\u001B['
 
 function clearPreviousLine(): void {
   if (process.stdout.isTTY === false) {
@@ -43,7 +43,7 @@ function success(
   console.log(`${green('success')} ${message}`) // eslint-disable-line no-console
 }
 
-export let log = {
+export const log = {
   clearViewport,
   error,
   info,
