@@ -8,14 +8,14 @@ import { formatTypeScriptErrorMessage } from './format-typescript-error-message.
 import { readTsConfig } from './read-tsconfig.js'
 
 export function typeCheckWatch(): () => void {
-  const tsConfig = readTsConfig()
-  const compilerOptions = {
+  var tsConfig = readTsConfig()
+  var compilerOptions = {
     ...tsConfig.compilerOptions,
     configFilePath: tsConfig.tsConfigFilePath,
     noEmit: true
   }
   let getElapsedTime: () => string
-  const host = ts.createWatchCompilerHost(
+  var host = ts.createWatchCompilerHost(
     tsConfig.tsConfigFilePath,
     {
       ...compilerOptions,
@@ -25,7 +25,7 @@ export function typeCheckWatch(): () => void {
     ts.sys,
     ts.createSemanticDiagnosticsBuilderProgram,
     function reportDiagnostic(diagnostic: ts.Diagnostic) {
-      const diagnostics = filterTypeScriptDiagnostics([diagnostic])
+      var diagnostics = filterTypeScriptDiagnostics([diagnostic])
       if (diagnostics.length === 0) {
         return
       }
@@ -50,7 +50,7 @@ export function typeCheckWatch(): () => void {
       }
     }
   )
-  const watchProgram = ts.createWatchProgram(host)
+  var watchProgram = ts.createWatchProgram(host)
   return function (): void {
     watchProgram.close()
   }
