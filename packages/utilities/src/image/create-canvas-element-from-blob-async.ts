@@ -11,6 +11,6 @@ import { createImageElementFromBlobAsync } from './create-image-element-from-blo
 export async function createCanvasElementFromBlobAsync(
   blob: Blob
 ): Promise<HTMLCanvasElement> {
-  const imageElement = await createImageElementFromBlobAsync(blob)
+  let imageElement = await createImageElementFromBlobAsync(blob)
   return createCanvasElementFromImageElement(imageElement)
 }
