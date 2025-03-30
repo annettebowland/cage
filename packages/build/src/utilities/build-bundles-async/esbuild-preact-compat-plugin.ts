@@ -6,7 +6,7 @@ import { fileURLToPath } from 'node:url'
 import { Plugin, PluginBuild } from 'esbuild'
 import { findUp } from 'find-up'
 
-const __dirname = dirname(fileURLToPath(import.meta.url))
+let __dirname = dirname(fileURLToPath(import.meta.url))
 
 export function esbuildPreactCompatPlugin(): Plugin {
   return {
@@ -17,7 +17,7 @@ export function esbuildPreactCompatPlugin(): Plugin {
         async function (): Promise<{
           path: string
         }> {
-          const preactCompatPath = await findUp(
+          let preactCompatPath = await findUp(
             join(
               'node_modules',
               'preact',
