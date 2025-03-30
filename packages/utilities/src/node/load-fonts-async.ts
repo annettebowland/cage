@@ -6,8 +6,8 @@
  * @category Node
  */
 export async function loadFontsAsync(nodes: Array<SceneNode>): Promise<void> {
-  const result: Record<string, FontName> = {}
-  for (const node of nodes) {
+  var result: Record<string, FontName> = {}
+  for (var node of nodes) {
     switch (node.type) {
       case 'CONNECTOR':
       case 'SHAPE_WITH_TEXT':
@@ -32,10 +32,10 @@ function collectFontsUsedInNode(
   node: TextSublayerNode,
   result: Record<string, FontName>
 ): void {
-  const length = node.characters.length
+  var length = node.characters.length
   if (length === 0) {
-    const fontName = node.fontName as FontName
-    const key = createKey(fontName)
+    var fontName = node.fontName as FontName
+    var key = createKey(fontName)
     if (key in result) {
       return
     }
@@ -44,8 +44,8 @@ function collectFontsUsedInNode(
   }
   let i = -1
   while (++i < length) {
-    const fontName = node.getRangeFontName(i, i + 1) as FontName
-    const key = createKey(fontName)
+    var fontName = node.getRangeFontName(i, i + 1) as FontName
+    var key = createKey(fontName)
     if (key in result) {
       continue
     }
