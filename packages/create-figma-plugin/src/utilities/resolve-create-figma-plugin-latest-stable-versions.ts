@@ -20,8 +20,8 @@ export async function resolveCreateFigmaPluginLatestStableVersions(): Promise<{
 async function resolveLatestStableVersion(
   packageName: string
 ): Promise<string> {
-  const result = await packageJson(packageName, { allVersions: true })
-  const versions = Object.keys(result.versions).sort(function (
+  let result = await packageJson(packageName, { allVersions: true })
+  let versions = Object.keys(result.versions).sort(function (
     a: string,
     b: string
   ): number {
@@ -30,8 +30,8 @@ async function resolveLatestStableVersion(
   if (versions.length === 0) {
     throw new Error('No versions')
   }
-  for (const version of versions) {
-    const parsed = semver.parse(version)
+  for (let version of versions) {
+    let parsed = semver.parse(version)
     if (parsed === null) {
       throw new Error(`Invalid version: ${version}`)
     }
