@@ -20,7 +20,7 @@ export function traverseNode(
     'children' in node &&
     (typeof stopTraversal !== 'function' || stopTraversal(node) === false)
   ) {
-    for (let childNode of node.children) {
+    for (const childNode of node.children) {
       traverseNode(childNode, processNode, stopTraversal)
     }
   }
