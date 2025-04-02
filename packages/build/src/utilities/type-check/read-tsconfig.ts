@@ -5,7 +5,7 @@ import ts from 'typescript'
 
 import { formatTypeScriptErrorMessage } from './format-typescript-error-message.js'
 
-let parseConfigHost: ts.ParseConfigHost = {
+const parseConfigHost: ts.ParseConfigHost = {
   fileExists: ts.sys.fileExists,
   readDirectory: ts.sys.readDirectory,
   readFile: ts.sys.readFile,
@@ -17,7 +17,7 @@ export function readTsConfig(): {
   filePaths: Array<string>
   tsConfigFilePath: string
 } {
-  let tsConfigFilePath = ts.findConfigFile(
+  const tsConfigFilePath = ts.findConfigFile(
     process.cwd(),
     ts.sys.fileExists,
     'tsconfig.json'
@@ -25,13 +25,13 @@ export function readTsConfig(): {
   if (typeof tsConfigFilePath === 'undefined') {
     throw new Error('Need a `tsconfig.json`')
   }
-  let jsonConfigFile = ts.readJsonConfigFile(
+  const jsonConfigFile = ts.readJsonConfigFile(
     tsConfigFilePath,
     function (path: string) {
       return fs.readFileSync(path, 'utf8')
     }
   )
-  let result = ts.parseJsonSourceFileConfigFileContent(
+  const result = ts.parseJsonSourceFileConfigFileContent(
     jsonConfigFile,
     parseConfigHost,
     dirname(tsConfigFilePath)
