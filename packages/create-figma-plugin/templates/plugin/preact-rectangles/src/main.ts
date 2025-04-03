@@ -4,9 +4,9 @@ import { CloseHandler, CreateRectanglesHandler } from './types'
 
 export default function () {
   once<CreateRectanglesHandler>('CREATE_RECTANGLES', function (count: number) {
-    const nodes: Array<SceneNode> = []
+    var nodes: Array<SceneNode> = []
     for (let i = 0; i < count; i++) {
-      const rect = figma.createRectangle()
+      var rect = figma.createRectangle()
       rect.x = i * 150
       rect.fills = [
         {
