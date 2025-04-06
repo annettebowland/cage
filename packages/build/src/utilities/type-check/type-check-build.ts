@@ -5,8 +5,8 @@ import { formatTypeScriptErrorMessage } from './format-typescript-error-message.
 import { readTsConfig } from './read-tsconfig.js'
 
 export function typeCheckBuild(): void {
-  let tsConfig = readTsConfig()
-  let compilerOptions = {
+  const tsConfig = readTsConfig()
+  const compilerOptions = {
     ...tsConfig.compilerOptions,
     configFilePath: tsConfig.tsConfigFilePath,
     noEmit: true
@@ -14,8 +14,8 @@ export function typeCheckBuild(): void {
   if (tsConfig.filePaths.length === 0) {
     return
   }
-  let program = ts.createProgram(tsConfig.filePaths, compilerOptions)
-  let diagnostics = filterTypeScriptDiagnostics(
+  const program = ts.createProgram(tsConfig.filePaths, compilerOptions)
+  const diagnostics = filterTypeScriptDiagnostics(
     ts.getPreEmitDiagnostics(program).slice()
   )
   if (diagnostics.length === 0) {
