@@ -4,7 +4,7 @@ import ts from 'typescript'
 import { writeFileAsync } from '../packages/common/src/write-file-async.js'
 
 async function main(): Promise<void> {
-  const globPatterns = process.argv.slice(2)
+  let globPatterns = process.argv.slice(2)
   try {
     await generateIndexTs(globPatterns, 'src/index.ts')
   } catch (error: any) {
@@ -18,21 +18,21 @@ async function generateIndexTs(
   globPatterns: Array<string>,
   outputFilePath: string
 ): Promise<void> {
-  const filePaths = await globby([
+  let filePaths = await globby([
     ...globPatterns,
     `!${outputFilePath}`,
     '!**/*.d.ts',
     '!**/*.stories.tsx'
   ])
-  const result: Array<string> = [] // Array of export declaration strings
-  const usedExportNames: Record<string, true> = {} // Track the names of exports that were already used
-  const program = ts.createProgram(filePaths, { allowJs: true })
-  for (const filePath of filePaths) {
-    const sourceFile = program.getSourceFile(filePath)
+  let result: Array<string> = [] // Array of export declaration strings
+  let usedExportNames: Record<string, true> = {} // Track the names of exports that were already used
+  let program = ts.createProgram(filePaths, { allowJs: true })
+  for (let filePath of filePaths) {
+    let sourceFile = program.getSourceFile(filePath)
     if (typeof sourceFile === 'undefined') {
       throw new Error(`\`sourceFile\` is \`undefined\`: ${filePath}`)
     }
-    const exportNames: Array<string> = []
+    let exportNames: Array<string> = []
     function addExport(exportName: string) {
       if (usedExportNames[exportName] === true) {
         throw new Error(`Export name clash \`${exportName}\`: ${filePath}`)
@@ -65,7 +65,7 @@ async function generateIndexTs(
           typeof node.modifiers !== 'undefined' &&
           node.modifiers[0].kind === ts.SyntaxKind.ExportKeyword
         ) {
-          const identifier = node.declarationList.declarations[0].name
+          let identifier = node.declarationList.declarations[0].name
           if (ts.isIdentifier(identifier)) {
             addExport(identifier.text)
           }
@@ -80,10 +80,10 @@ async function generateIndexTs(
         }
       }
     })
-    const normalizedFilePath = filePath
+    let normalizedFilePath = filePath
       .replace(/^(?:\.\/)?src\//, './') // Relace `./src/` with `./`
       .replace(/\.tsx?/, '.js')
-    const exportDeclaration = `export { ${exportNames
+    let exportDeclaration = `export { ${exportNames
       .sort()
       .join(', ')} } from '${normalizedFilePath}'`
     result.push(exportDeclaration)
