@@ -6,8 +6,8 @@ export function setUpMenu({
   menuToggleButtonElementSelector,
   menuVisibleBodyClassName
 }) {
-  let menuElement = document.querySelector(menuElementSelector)
-  let menuToggleButtonElement = document.querySelector(
+  const menuElement = document.querySelector(menuElementSelector)
+  const menuToggleButtonElement = document.querySelector(
     menuToggleButtonElementSelector
   )
 
