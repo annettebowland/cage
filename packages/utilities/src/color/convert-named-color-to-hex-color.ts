@@ -9,7 +9,7 @@ import { NAMED_COLORS } from './private/named-colors.js'
  * @category Color
  */
 export function convertNamedColorToHexColor(namedColor: string): null | string {
-  let hexColor = NAMED_COLORS[namedColor.toLowerCase()]
+  const hexColor = NAMED_COLORS[namedColor.toLowerCase()]
   if (typeof hexColor === 'undefined') {
     return null
   }
