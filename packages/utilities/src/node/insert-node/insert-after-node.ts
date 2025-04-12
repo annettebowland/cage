@@ -9,7 +9,7 @@ export function insertAfterNode(
   node: SceneNode,
   referenceNode: SceneNode
 ): void {
-  let parentNode = getParentNode(referenceNode)
-  let index = parentNode.children.indexOf(referenceNode)
+  const parentNode = getParentNode(referenceNode)
+  const index = parentNode.children.indexOf(referenceNode)
   parentNode.insertChild(index, node)
 }
