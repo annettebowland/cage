@@ -17,12 +17,12 @@ type SvgFile = {
   svgString: string
 }
 
-var __dirname = dirname(fileURLToPath(import.meta.url))
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 async function main(): Promise<void> {
   try {
-    var globPatterns = ['icons/**/*.svg']
-    var outputDirectoryPath = resolve(__dirname, '..', 'src', 'icons')
+    const globPatterns = ['icons/**/*.svg']
+    const outputDirectoryPath = resolve(__dirname, '..', 'src', 'icons')
     await generateIconsAsync(globPatterns, outputDirectoryPath)
   } catch (error: any) {
     console.error(error.message) // eslint-disable-line no-console
@@ -35,22 +35,22 @@ async function generateIconsAsync(
   globPatterns: Array<string>,
   outputDirectoryPath: string
 ): Promise<void> {
-  var filePaths = await globby(globPatterns)
+  const filePaths = await globby(globPatterns)
   if (filePaths.length === 0) {
     throw new Error(`No files match \`${globPatterns.join(', ')}\``)
   }
-  var svgFiles = await readSvgFilesAsync(filePaths)
-  var dimensions: Record<string, Array<SvgFile>> = groupSvgFilesByDimension(
+  const svgFiles = await readSvgFilesAsync(filePaths)
+  const dimensions: Record<string, Array<SvgFile>> = groupSvgFilesByDimension(
     svgFiles
   )
-  var directoryPaths = await globby(join(outputDirectoryPath, 'icon-*'), {
+  const directoryPaths = await globby(join(outputDirectoryPath, 'icon-*'), {
     onlyFiles: false
   })
-  for (var directoryPath of directoryPaths) {
+  for (const directoryPath of directoryPaths) {
     await fs.rm(directoryPath, { force: true, recursive: true })
   }
-  for (var dimension in dimensions) {
-    var directoryPath = join(outputDirectoryPath, `icon-${dimension}`)
+  for (const dimension in dimensions) {
+    const directoryPath = join(outputDirectoryPath, `icon-${dimension}`)
     await writePreactComponentsAsync(dimensions[dimension], directoryPath)
     await writeStoriesAsync(dimensions[dimension], dimension, directoryPath)
   }
@@ -59,11 +59,11 @@ async function generateIconsAsync(
 async function readSvgFilesAsync(
   filePaths: Array<string>
 ): Promise<Array<SvgFile>> {
-  var result: Array<SvgFile> = []
-  var usedNames: Record<string, true> = {}
-  for (var filePath of filePaths.sort()) {
-    var svgFile: SvgFile = await readSvgFileAsync(filePath)
-    var { componentName } = svgFile
+  const result: Array<SvgFile> = []
+  const usedNames: Record<string, true> = {}
+  for (const filePath of filePaths.sort()) {
+    const svgFile: SvgFile = await readSvgFileAsync(filePath)
+    const { componentName } = svgFile
     if (usedNames[componentName] === true) {
       throw new Error(`Name clash \`${componentName}\`: ${filePath}`)
     }
@@ -74,11 +74,11 @@ async function readSvgFilesAsync(
 }
 
 async function readSvgFileAsync(filePath: string): Promise<SvgFile> {
-  var baseName = basename(filePath, extname(filePath))
-  var svgString = await fs.readFile(filePath, 'utf8')
+  const baseName = basename(filePath, extname(filePath))
+  const svgString = await fs.readFile(filePath, 'utf8')
   let width = 0
   let height = 0
-  var result = optimize(svgString, {
+  const result = optimize(svgString, {
     plugins: [
       {
         fn: function () {
@@ -128,9 +128,9 @@ async function readSvgFileAsync(filePath: string): Promise<SvgFile> {
 function groupSvgFilesByDimension(
   svgFiles: Array<SvgFile>
 ): Record<string, Array<SvgFile>> {
-  var result: Record<string, Array<SvgFile>> = {}
-  for (var svgFile of svgFiles) {
-    var dimension = `${svgFile.dimension}`
+  const result: Record<string, Array<SvgFile>> = {}
+  for (const svgFile of svgFiles) {
+    const dimension = `${svgFile.dimension}`
     if (typeof result[dimension] === 'undefined') {
       result[dimension] = []
     }
@@ -143,16 +143,16 @@ async function writePreactComponentsAsync(
   svgFiles: Array<SvgFile>,
   directoryPath: string
 ): Promise<void> {
-  for (var { baseName, componentName, svgString } of svgFiles) {
-    var fileContents = `import { h } from 'preact'
+  for (const { baseName, componentName, svgString } of svgFiles) {
+    const fileContents = `import { h } from 'preact'
 
 import { createIcon } from '../create-icon.js'
 
-export var ${componentName} = createIcon(
+export const ${componentName} = createIcon(
   ${svgString}
 )
 `
-    var filePath = join(directoryPath, `${baseName}.tsx`)
+    const filePath = join(directoryPath, `${baseName}.tsx`)
     await writeTsFileAsync(filePath, fileContents)
   }
 }
@@ -162,15 +162,15 @@ async function writeStoriesAsync(
   dimension: string,
   directoryPath: string
 ): Promise<void> {
-  var imports: Array<string> = []
-  var stories: Array<string> = []
-  for (var { baseName, componentName, storyName } of svgFiles) {
+  const imports: Array<string> = []
+  const stories: Array<string> = []
+  for (const { baseName, componentName, storyName } of svgFiles) {
     imports.push(`import { ${componentName} } from '../${baseName}.js'`)
-    stories.push(`export var ${storyName.replace(/^Icon/, '')} = function () {
+    stories.push(`export const ${storyName.replace(/^Icon/, '')} = function () {
   return <${componentName} />
 }`)
   }
-  var fileContents = `import { h } from 'preact'
+  const fileContents = `import { h } from 'preact'
 
 ${imports.join('\n')}
 
@@ -183,7 +183,7 @@ export default {
 
 ${stories.join('\n\n')}
 `
-  var filePath = join(
+  const filePath = join(
     directoryPath,
     'stories',
     `icon-${dimension}.stories.tsx`
