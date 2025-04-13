@@ -4,7 +4,7 @@ import { InsertCodeHandler } from './types'
 
 export default function () {
   once<InsertCodeHandler>('INSERT_CODE', async function (code: string) {
-    const text = figma.createText()
+    let text = figma.createText()
     await loadFontsAsync([text])
     text.characters = code
     figma.currentPage.selection = [text]
