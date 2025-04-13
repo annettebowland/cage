@@ -6,11 +6,11 @@
  * @category Node
  */
 export function getNodeIndexPath(node: SceneNode): Array<number> {
-  const parentNode = node.parent
+  let parentNode = node.parent
   if (parentNode === null) {
     throw new Error('`parentNode` is `null`')
   }
-  const nodeIndex = parentNode.children.findIndex(function (
+  let nodeIndex = parentNode.children.findIndex(function (
     childNode: SceneNode
   ): boolean {
     return childNode.id === node.id
@@ -19,7 +19,7 @@ export function getNodeIndexPath(node: SceneNode): Array<number> {
     throw new Error('Invariant violation')
   }
   if (parentNode.type === 'PAGE') {
-    const pageIndex = figma.root.children.findIndex(function (
+    let pageIndex = figma.root.children.findIndex(function (
       pageNode: PageNode
     ): boolean {
       return pageNode.id === parentNode.id
