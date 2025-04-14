@@ -6,11 +6,11 @@ export function createFocusTrapKeyDownHandler(rootElement?: HTMLElement) {
       return
     }
     event.preventDefault()
-    let focusableElements = getFocusableElements(rootElement)
+    const focusableElements = getFocusableElements(rootElement)
     if (focusableElements.length === 0) {
       return
     }
-    let index = findElementIndex(
+    const index = findElementIndex(
       event.target as HTMLElement,
       focusableElements
     )
