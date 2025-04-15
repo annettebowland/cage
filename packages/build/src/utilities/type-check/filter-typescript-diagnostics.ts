@@ -10,7 +10,7 @@ export function filterTypeScriptDiagnostics(
     if (typeof diagnostic.file === 'undefined') {
       return true
     }
-    const fileName = diagnostic.file.fileName
+    let fileName = diagnostic.file.fileName
     if (
       fileName.indexOf('typescript/lib/lib.dom.d.ts') === -1 &&
       fileName.indexOf('@figma/plugin-typings/index.d.ts') === -1 &&
@@ -19,7 +19,7 @@ export function filterTypeScriptDiagnostics(
     ) {
       return true
     }
-    const { code, messageText } = diagnostic
+    let { code, messageText } = diagnostic
     if (
       code === 2451 &&
       messageText !== "Cannot redeclare block-scoped variable 'console'." &&
