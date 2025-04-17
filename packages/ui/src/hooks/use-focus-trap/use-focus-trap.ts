@@ -5,7 +5,7 @@ import { createFocusTrapKeyDownHandler } from '../../utilities/private/create-fo
 export function useFocusTrap(rootElement?: HTMLElement): void {
   useEffect(
     function () {
-      const handleKeyDown = createFocusTrapKeyDownHandler(rootElement)
+      let handleKeyDown = createFocusTrapKeyDownHandler(rootElement)
       window.addEventListener('keydown', handleKeyDown)
       return function (): void {
         window.removeEventListener('keydown', handleKeyDown)
