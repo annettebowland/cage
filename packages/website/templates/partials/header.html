@@ -1,0 +1,48 @@
+<header class="page__header">
+  <h1 class="title">
+    <% if (order === 1) { %>
+      <span><%- globals.name %></span>
+    <% } else { %>
+      <a href="<%- query('page')[0].url %>"><%- globals.name %></a>
+    <% } %>
+  </h1>
+  <button class="menu-toggle-button" aria-expanded="false">
+    <div class="menu-toggle-button__inner">
+      Toggle menu
+    </div>
+    <svg fill="none" viewBox="0 0 20 20" class="menu-toggle-button__svg-menu">
+      <path fill-rule="evenodd" d="M0 3.25h20v1.5H0v-1.5Zm0 6h20v1.5H0v-1.5Zm20 6H0v1.5h20v-1.5Z" clip-rule="evenodd" />
+    </svg>
+    <svg fill="none" viewBox="0 0 20 20"class="menu-toggle-button__svg-close">
+      <path fill-rule="evenodd" d="M10 11.0607L16.4697 17.5303L17.5303 16.4697L11.0607 10L17.5303 3.53033L16.4697 2.46967L10 8.93934L3.53033 2.46967L2.46967 3.53033L8.93934 10L2.46967 16.4697L3.53033 17.5303L10 11.0607Z" clip-rule="evenodd" />
+    </svg>
+  </button>
+  <nav class="menu">
+    <ul>
+      <% for (const page of query('page')) { %>
+        <% if (page.url === url) { %>
+          <li>
+            <a href="<%- page.url %>" class="menu__active"><%- page.title %></a>
+            <div class="menu__toc">
+              <h2 class="menu__toc-header">On this page</h2>
+              <%= toc %>
+            </div>
+          </li>
+        <% } else { %>
+          <li><a href="<%- page.url %>"><%- page.title %></a></li>
+        <% } %>
+      <% } %>
+    </ul>
+    <ul>
+      <% for (const link of globals.links) { %>
+        <li><a href="<%- link.url %>" target="_blank"><%- link.title %></a></li>
+      <% } %>
+    </ul>
+    <ul>
+      <% for (const link of globals.externalLinks) { %>
+        <li><a href="<%- link.url %>" target="_blank"><%- link.title %></a></li>
+      <% } %>
+    </ul>
+    <div class="menu__version">v<%- version %></div>
+  </nav>
+</header>

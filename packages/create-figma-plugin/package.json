@@ -1,0 +1,78 @@
+{
+  "name": "create-figma-plugin",
+  "version": "4.0.0",
+  "description": "Initialize a new Figma/FigJam plugin/widget using a template",
+  "keywords": [
+    "create-figma-plugin",
+    "figjam",
+    "figma",
+    "figma-plugin",
+    "figma-plugins"
+  ],
+  "license": "MIT",
+  "author": "Yuan Qing Lim",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/create-figma-plugin.git",
+    "directory": "packages/create-figma-plugin"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "lib",
+    "templates"
+  ],
+  "bin": {
+    "create-figma-plugin": "./lib/cli.js"
+  },
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "tsc --build",
+    "clean": "rimraf --glob '*.log' lib tsconfig.tsbuildinfo",
+    "fix": "concurrently npm:fix:js npm:fix:json",
+    "fix:js": "eslint --fix '{src,test}/**/*.ts'",
+    "fix:json": "prettier --log-level error --write '*.json'",
+    "lint": "eslint '{src,test}/**/*.ts'",
+    "test": "ava --serial 'test/**/*.ts'"
+  },
+  "dependencies": {
+    "@create-figma-plugin/common": "^4.0.0",
+    "@inquirer/select": "^4.1.0",
+    "@sindresorhus/slugify": "^2.2.1",
+    "globby": "^14.1.0",
+    "is-utf8": "^0.2.1",
+    "kleur": "^4.1.5",
+    "lodash.template": "^4.5.0",
+    "package-json": "^10.0.1",
+    "path-exists": "^5.0.0",
+    "sade": "^1.8.1",
+    "semver": "^7.7.1",
+    "titleize": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/is-utf8": "0.2.3",
+    "@types/lodash.template": "4.5.3",
+    "@types/node": "22.13.14",
+    "@types/rimraf": "4.0.5",
+    "@types/semver": "7.7.0",
+    "ava": "6.2.0",
+    "concurrently": "9.1.2",
+    "rimraf": "6.0.1",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "failFast": true,
+    "nodeArguments": [
+      "--import",
+      "tsx"
+    ],
+    "timeout": "2m",
+    "workerThreads": false
+  }
+}

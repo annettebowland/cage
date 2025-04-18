@@ -1,0 +1,88 @@
+{
+  "name": "create-figma-plugin",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "packageManager": "npm@11.2.0",
+  "scripts": {
+    "build": "turbo run build",
+    "bump-dependencies": "tsx scripts/bump-dependencies.ts @figma/plugin-typings",
+    "clean": "turbo run clean && rimraf --glob '*.log' 'packages/*/.turbo' .turbo build node_modules/.cache/turbo",
+    "fix": "turbo run fix && eslint --fix eslint.config.js 'scripts/**/*.ts'",
+    "lint": "turbo run lint && eslint eslint.config.js 'scripts/**/*.ts'",
+    "postinstall": "simple-git-hooks && tsx scripts/patch-figma-plugin-typings.ts && npm run build",
+    "prepackages-publish": "turbo run fix lint && turbo run test build",
+    "packages-publish": "lerna publish from-package",
+    "packages-version": "lerna version --force-publish",
+    "release": "sh scripts/release.sh",
+    "reset": "npm run clean && rimraf --glob node_modules package-lock.json './packages/*/node_modules' && npm install",
+    "test": "turbo run test",
+    "prewebsite-build": "npm run build && rimraf build",
+    "website-build": "npm run website-build:website && npm run website-build:storybook && npm run website-build:figma-plugin-json",
+    "website-build:website": "cd packages/website && npm run website-build && cpy './build/**/*' ../../build",
+    "website-build:storybook": "cd packages/ui && BASE_URL=/create-figma-plugin/storybook/ npm run storybook-build && cpy './build/**/*' ../../build/create-figma-plugin/storybook",
+    "website-build:figma-plugin-json": "cp packages/build/src/figma-plugin.json build/create-figma-plugin/figma-plugin.json",
+    "prewebsite-deploy": "npm run website-build",
+    "website-deploy": "gh-pages --dist build/create-figma-plugin",
+    "website-serve": "sirv build --dev --host --port 4242"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.23.0",
+    "@lerna-lite/publish": "4.0.0",
+    "@lerna-lite/version": "4.0.0",
+    "@types/node": "22.13.14",
+    "concurrently": "9.1.2",
+    "cpy-cli": "5.0.0",
+    "eslint": "9.23.0",
+    "eslint-config-prettier": "10.1.1",
+    "eslint-plugin-prettier": "5.2.5",
+    "eslint-plugin-react": "7.37.4",
+    "eslint-plugin-react-hooks": "5.2.0",
+    "eslint-plugin-simple-import-sort": "12.1.1",
+    "gh-pages": "6.3.0",
+    "globby": "14.1.0",
+    "lint-staged": "15.5.0",
+    "npm-check-updates": "17.1.16",
+    "path-exists": "5.0.0",
+    "prettier": "3.5.3",
+    "rimraf": "6.0.1",
+    "simple-git-hooks": "2.12.1",
+    "sirv-cli": "3.0.1",
+    "stylelint": "16.17.0",
+    "stylelint-config-idiomatic-order": "10.0.0",
+    "stylelint-prettier": "5.0.3",
+    "tsx": "4.19.3",
+    "turbo": "2.4.4",
+    "typescript": "5.8.2",
+    "typescript-eslint": "8.28.0"
+  },
+  "lint-staged": {
+    "*.{js,ts,tsx}": [
+      "eslint"
+    ],
+    "*.css": [
+      "stylelint"
+    ]
+  },
+  "prettier": {
+    "quoteProps": "consistent",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "pre-push": "npx turbo run fix lint && npx turbo run test build"
+  },
+  "stylelint": {
+    "extends": [
+      "stylelint-prettier/recommended",
+      "stylelint-config-idiomatic-order"
+    ]
+  },
+  "workspaces": [
+    "packages/*"
+  ]
+}

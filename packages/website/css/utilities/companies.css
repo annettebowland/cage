@@ -1,0 +1,36 @@
+.companies {
+  display: grid;
+  overflow: hidden;
+  border-radius: var(--border-radius);
+  column-gap: 1px;
+  grid-template-columns: 50% 50%;
+  row-gap: 1px;
+}
+
+.companies__logo {
+  display: block;
+  padding: var(--space-100) 0;
+  background-color: var(--color-gray-1);
+  user-select: none;
+}
+.companies__logo img {
+  display: block;
+  height: 40px;
+  margin: auto;
+}
+
+@media (min-width: 640px) {
+  .companies {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .companies__logo {
+    padding: var(--space-150) 0;
+  }
+}
+
+@media (min-width: 1000px) {
+  .companies__logo img {
+    height: 44px;
+  }
+}

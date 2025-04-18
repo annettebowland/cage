@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "allowArbitraryExtensions": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "esModuleInterop": true,
+    "module": "node16",
+    "moduleResolution": "node16",
+    "removeComments": true,
+    "sourceMap": true,
+    "strict": true,
+    "target": "ES2020"
+  }
+}

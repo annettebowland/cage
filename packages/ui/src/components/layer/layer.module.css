@@ -1,0 +1,86 @@
+.layer {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+
+.disabled,
+.disabled * {
+  cursor: not-allowed;
+}
+
+.input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.input {
+  z-index: var(--z-index-1); /* stack `.input` on top of everything else */
+  display: block;
+}
+
+.box {
+  display: flex;
+  padding: 3px var(--space-8) 3px 3px;
+  border: var(--border-width-1) solid transparent;
+  border-radius: var(--border-radius-6);
+  gap: var(--space-8);
+}
+.input:hover ~ .box {
+  background-color: var(--figma-color-bg-hover);
+}
+.input:focus-visible ~ .box {
+  border-color: var(--figma-color-border-selected);
+}
+.input:checked ~ .box {
+  background-color: var(--figma-color-bg-selected);
+}
+
+.component .input:focus-visible ~ .box {
+  border-color: var(--figma-color-border-component-hover);
+}
+.component .input:checked ~ .box {
+  background-color: var(--figma-color-bg-component-tertiary);
+}
+
+.children,
+.description {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.children {
+  padding-left: var(--space-24);
+  color: var(--figma-color-text);
+}
+.component .children {
+  color: var(--figma-color-text-component);
+}
+.bold .children {
+  font-weight: var(--font-weight-bold);
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: var(--space-12);
+  color: var(--figma-color-icon-secondary);
+  pointer-events: none;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+.input:checked ~ .box .icon {
+  color: var(--figma-color-icon);
+}
+.component .box .icon,
+.component .input:checked ~ .box .icon {
+  color: var(--figma-color-icon-component);
+}
+
+.description {
+  flex: 1;
+  color: var(--figma-color-text-secondary);
+}

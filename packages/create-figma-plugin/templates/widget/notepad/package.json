@@ -1,0 +1,28 @@
+{
+  "dependencies": {
+    "@create-figma-plugin/ui": "^<%- versions.createFigmaPlugin.ui %>",
+    "@create-figma-plugin/utilities": "^<%- versions.createFigmaPlugin.utilities %>",
+    "preact": ">=10"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/build": "^<%- versions.createFigmaPlugin.build %>",
+    "@create-figma-plugin/tsconfig": "^<%- versions.createFigmaPlugin.tsconfig %>",
+    "@figma/plugin-typings": "<%- versions.figma.pluginTypings %>",
+    "@figma/widget-typings": "<%- versions.figma.widgetTypings %>",
+    "typescript": ">=5"
+  },
+  "scripts": {
+    "build": "build-figma-plugin --typecheck --minify",
+    "watch": "build-figma-plugin --typecheck --watch"
+  },
+  "figma-plugin": {
+    "editorType": [
+      "figjam"
+    ],
+    "containsWidget": true,
+    "id": "<%- id %>",
+    "name": "<%- name %>",
+    "main": "src/main.tsx",
+    "ui": "src/ui.tsx"
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "@create-figma-plugin/common",
+  "version": "4.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Internal utilities for the Create Figma Plugin toolkit",
+  "keywords": [
+    "create-figma-plugin",
+    "figjam",
+    "figma",
+    "figma-plugin",
+    "figma-plugins"
+  ],
+  "license": "MIT",
+  "author": "Yuan Qing Lim",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/create-figma-plugin.git",
+    "directory": "packages/common"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "lib"
+  ],
+  "exports": "./lib/index.js",
+  "main": "./lib/index.js",
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "npm run build:generate-index && npm run build:js",
+    "build:js": "tsc --build",
+    "build:generate-index": "rimraf src/index.ts && tsx ../../scripts/generate-index.ts -- 'src/**/*.ts' '!src/**/private/**/*' && eslint --fix src/index.ts",
+    "clean": "rimraf --glob '*.log' lib tsconfig.tsbuildinfo",
+    "fix": "concurrently npm:fix:js npm:fix:json",
+    "fix:js": "eslint --fix '{src,test}/**/*.ts' --ignore-pattern src/index.ts",
+    "fix:json": "prettier --log-level error --write '*.json' 'test/**/fixtures/**/*.json'",
+    "lint": "eslint '{src,test}/**/*.ts' --ignore-pattern src/index.ts",
+    "test": "ava --serial 'test/**/*.ts'"
+  },
+  "dependencies": {
+    "@sindresorhus/slugify": "^2.2.1",
+    "kleur": "^4.1.5",
+    "path-exists": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.13.14",
+    "ava": "6.2.0",
+    "concurrently": "9.1.2",
+    "rimraf": "6.0.1",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "failFast": true,
+    "nodeArguments": [
+      "--import",
+      "tsx"
+    ],
+    "timeout": "2m",
+    "workerThreads": false
+  }
+}

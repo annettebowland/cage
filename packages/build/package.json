@@ -1,0 +1,91 @@
+{
+  "name": "@create-figma-plugin/build",
+  "version": "4.0.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "description": "Build a Figma/FigJam plugin/widget",
+  "keywords": [
+    "create-figma-plugin",
+    "figjam",
+    "figma",
+    "figma-plugin",
+    "figma-plugins"
+  ],
+  "license": "MIT",
+  "author": "Yuan Qing Lim",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yuanqing/create-figma-plugin.git",
+    "directory": "packages/build"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "files": [
+    "lib"
+  ],
+  "bin": {
+    "build-figma-plugin": "./lib/cli.js"
+  },
+  "scripts": {
+    "prebuild": "npm run clean",
+    "build": "tsc --build",
+    "clean": "rimraf --glob '*.log' lib tsconfig.tsbuildinfo",
+    "fix": "concurrently npm:fix:js npm:fix:json",
+    "fix:js": "eslint --fix '{src,test}/**/*.ts'",
+    "fix:json": "prettier --log-level error --write '*.json' 'src/**/*.json' 'test/**/fixtures/**/*.json'",
+    "lint": "eslint '{src,test}/**/*.ts'",
+    "test": "ava --serial 'test/**/*.ts'"
+  },
+  "dependencies": {
+    "@create-figma-plugin/common": "^4.0.0",
+    "chokidar": "^4.0.3",
+    "cssnano": "^7.0.6",
+    "esbuild": "0.25.1",
+    "find-up": "^7.0.0",
+    "globby": "^14.1.0",
+    "indent-string": "^5.0.0",
+    "kleur": "^4.1.5",
+    "path-exists": "^5.0.0",
+    "postcss": "^8.5.3",
+    "postcss-modules": "^6.0.1",
+    "rev-hash": "^4.1.0",
+    "sade": "^1.8.1",
+    "temp-write": "^6.0.0",
+    "tempy": "^3.1.0",
+    "typed-css-modules": "^0.9.1"
+  },
+  "devDependencies": {
+    "@create-figma-plugin/tsconfig": "^4.0.0",
+    "@create-figma-plugin/utilities": "^4.0.0",
+    "@figma/plugin-typings": "1.109.0",
+    "@types/node": "22.13.14",
+    "@types/react": "19.0.12",
+    "@types/rimraf": "4.0.5",
+    "ava": "6.2.0",
+    "concurrently": "9.1.2",
+    "preact": "10.26.4",
+    "react": "19.1.0",
+    "rimraf": "6.0.1",
+    "tsx": "4.19.3",
+    "typescript": "5.8.2"
+  },
+  "peerDependencies": {
+    "@figma/plugin-typings": ">=1",
+    "typescript": ">=5"
+  },
+  "ava": {
+    "extensions": {
+      "ts": "module"
+    },
+    "failFast": true,
+    "nodeArguments": [
+      "--import",
+      "tsx"
+    ],
+    "timeout": "2m",
+    "workerThreads": false
+  }
+}

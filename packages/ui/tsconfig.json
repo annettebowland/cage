@@ -1,0 +1,13 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "react",
+    "jsxFactory": "h",
+    "lib": ["DOM", "ES2020"],
+    "outDir": "lib",
+    "rootDir": "src",
+    "types": ["@figma/plugin-typings", "preact"]
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "references": [{ "path": "../utilities" }]
+}

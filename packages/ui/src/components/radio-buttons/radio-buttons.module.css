@@ -1,0 +1,54 @@
+.radioButtons {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+
+.disabled,
+.disabled * {
+  cursor: not-allowed;
+}
+
+.radioButton {
+  position: relative;
+  display: flex;
+  gap: var(--space-6);
+}
+
+.input {
+  position: absolute;
+  z-index: var(--z-index-1); /* stack `.input` on top of everything else */
+  top: calc(-1 * var(--space-8));
+  right: calc(-1 * var(--space-8));
+  bottom: calc(-1 * var(--space-8));
+  left: calc(-1 * var(--space-8));
+  display: block;
+}
+
+.box {
+  width: 14px;
+  height: 14px;
+  border: 1px solid var(--figma-color-border-strong);
+  border-radius: 7px;
+  background-color: var(--figma-color-bg);
+  box-shadow: 0 0 0 2.5px var(--figma-color-bg) inset;
+}
+.radioButton:not(.disabled) .input:checked ~ .box {
+  background-color: var(--figma-color-bg-inverse);
+}
+.radioButton:not(.disabled) .input:focus ~ .box {
+  border-color: var(--figma-color-border-brand-strong);
+}
+.disabled .input ~ .box {
+  border-color: var(--figma-color-border-disabled);
+}
+.disabled .input:checked ~ .box {
+  background-color: var(--figma-color-bg-disabled);
+}
+
+.children {
+  flex: 1;
+  padding-top: 3px;
+}
+.disabled .children {
+  opacity: var(--opacity-30);
+}

@@ -1,0 +1,33 @@
+{
+  "figma-plugin": {
+    "api": "42",
+    "widgetApi": "43",
+    "editorType": [
+      "figjam"
+    ],
+    "containsWidget": true,
+    "id": "44",
+    "name": "a",
+    "main": "src/main.ts",
+    "capabilities": [
+      "textreview"
+    ],
+    "permissions": [
+      "activeusers"
+    ],
+    "documentAccess": "dynamic-page",
+    "networkAccess": {
+      "allowedDomains": [
+        "foo.com"
+      ],
+      "devAllowedDomains": [
+        "bar.com"
+      ],
+      "reasoning": "baz"
+    },
+    "enablePrivatePluginApi": true,
+    "enableProposedApi": true,
+    "build": "b",
+    "x": "y"
+  }
+}

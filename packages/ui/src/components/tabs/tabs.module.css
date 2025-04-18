@@ -1,0 +1,44 @@
+.tabs {
+  position: relative;
+  z-index: var(--z-index-1);
+  display: flex;
+  border-bottom: var(--border-width-1) solid var(--figma-color-border);
+}
+
+.tab {
+  padding: var(--space-8) var(--space-4);
+  color: var(--figma-color-text-secondary);
+}
+.tab:first-child {
+  padding-left: var(--space-8);
+}
+.tab:last-child {
+  padding-right: var(--space-8);
+}
+.tab:hover {
+  color: var(--figma-color-text);
+}
+
+.input {
+  display: block;
+  width: 0;
+  height: 0;
+}
+
+.value {
+  height: var(--space-24);
+  padding: var(--space-4) var(--space-8);
+  border-radius: var(--border-radius-4);
+}
+label:hover .input ~ .value {
+  background-color: var(--figma-color-bg-secondary);
+}
+label .input:checked ~ .value {
+  background-color: var(--figma-color-bg-secondary);
+  color: var(--figma-color-text);
+  font-weight: var(--font-weight-bold);
+}
+
+.children {
+  color: var(--figma-color-text);
+}

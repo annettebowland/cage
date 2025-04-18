@@ -1,0 +1,46 @@
+.menu-toggle-button {
+  position: fixed;
+  z-index: var(--z-index-3);
+  top: 0;
+  right: 0;
+  display: flex;
+  width: var(--space-300);
+  height: var(--space-300);
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: var(--color-gray-4);
+  cursor: pointer;
+}
+
+.menu-toggle-button__inner {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  text-indent: -9999em;
+}
+
+.menu-toggle-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+  pointer-events: none;
+}
+.menu-toggle-button .menu-toggle-button__svg-menu {
+  display: block;
+}
+.menu-toggle-button .menu-toggle-button__svg-close {
+  display: none;
+}
+.menu-toggle-button[aria-expanded='true'] .menu-toggle-button__svg-menu {
+  display: none;
+}
+.menu-toggle-button[aria-expanded='true'] .menu-toggle-button__svg-close {
+  display: block;
+}
+
+@media (min-width: 1000px) {
+  .menu-toggle-button {
+    display: none;
+  }
+}

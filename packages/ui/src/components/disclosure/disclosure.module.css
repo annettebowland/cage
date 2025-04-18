@@ -1,0 +1,44 @@
+.label {
+  position: relative;
+  z-index: var(--z-index-1);
+}
+
+.input {
+  position: absolute;
+  z-index: var(
+    --z-index-1
+  ); /* stack `.input` over all other elements within `.label` */
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.title,
+.children {
+  padding: var(--space-8) var(--space-12) var(--space-8) var(--space-16);
+}
+
+.title {
+  position: relative;
+  border-radius: var(--border-radius-4);
+  color: var(--figma-color-text);
+  font-weight: var(--font-weight-bold);
+}
+.input:focus-visible ~ .title {
+  box-shadow: 0 0 0 var(--border-width-1) var(--figma-color-border-selected)
+    inset;
+}
+
+.title .icon {
+  position: absolute;
+  left: var(--space-0);
+  color: var(--figma-color-icon);
+}
+.input:checked ~ .title .icon {
+  transform: rotate(90deg);
+}
+
+.children {
+  color: var(--figma-color-text);
+}

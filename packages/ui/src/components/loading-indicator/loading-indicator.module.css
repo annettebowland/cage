@@ -1,0 +1,25 @@
+.loadingIndicator {
+  position: relative;
+  width: var(--space-16);
+  height: var(--space-16);
+  margin: auto;
+}
+
+.svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: var(--space-16);
+  height: var(--space-16);
+  animation: rotating 0.5s linear infinite;
+  fill: currentColor;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

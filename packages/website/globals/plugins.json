@@ -1,0 +1,1910 @@
+[
+  {
+    "authors": [
+      {
+        "name": "Kent Yang",
+        "url": "https://figma.com/@kn"
+      }
+    ],
+    "description": "Add a simple device frame to make designs look more real",
+    "githubUrl": null,
+    "id": "1149987037748021167",
+    "name": "A Little Bit Mockup"
+  },
+  {
+    "authors": [
+      {
+        "name": "Aaply",
+        "url": "https://twitter.com/AaplyHQ"
+      }
+    ],
+    "description": "Helps to work out the logic of the mobile app, plan flows, and design wireframes",
+    "githubUrl": null,
+    "id": "1229734902523136848",
+    "name": "Aaply"
+  },
+  {
+    "authors": [
+      {
+        "name": "Suraj Hanchinal",
+        "url": "https://figma.com/@surajhanchinal"
+      },
+      {
+        "name": "Vaishnav Ramayan",
+        "url": "https://figma.com/@coffeewriter"
+      }
+    ],
+    "description": "An AI-powered assistant for crafting flawless UI copy",
+    "githubUrl": null,
+    "id": "1226960677405751416",
+    "name": "AI Coffee Writer"
+  },
+  {
+    "authors": [
+      {
+        "name": "Unfold",
+        "url": "https://twitter.com/unfoldco"
+      }
+    ],
+    "description": "Bend your type!",
+    "githubUrl": null,
+    "id": "762070688792833472",
+    "name": "Arc"
+  },
+  {
+    "authors": [
+      {
+        "name": "Roman Nurik",
+        "url": "https://twitter.com/romannurik"
+      }
+    ],
+    "description": "Utilities for working with top-level frames",
+    "githubUrl": "https://github.com/romannurik/Figma-ArtboardTricks",
+    "id": "911261236876701307",
+    "name": "Artboard Tricks"
+  },
+  {
+    "authors": [
+      {
+        "name": "Youssef Bouzidi",
+        "url": "https://twitter.com/Yusof_Bz"
+      }
+    ],
+    "description": "Generate avatars for your app design prototype with one click",
+    "githubUrl": null,
+    "id": "1120329159944131602",
+    "name": "Avatarg"
+  },
+  {
+    "authors": [
+      {
+        "name": "Masanori Ueda",
+        "url": "https://twitter.com/wentz_design"
+      }
+    ],
+    "description": "Generate a simple bar chart",
+    "githubUrl": null,
+    "id": "1224003068372701617",
+    "name": "Bar Chart Generator"
+  },
+  {
+    "authors": [
+      {
+        "name": "Chien-Ju Peng",
+        "url": "https://cjp-design.com/"
+      }
+    ],
+    "description": "Visually proportional resizing icons or logos",
+    "githubUrl": null,
+    "id": "1260179181920548587",
+    "name": "Batch Icon Logo Resizer"
+  },
+  {
+    "authors": [
+      {
+        "name": "Alex Widua",
+        "url": "https://twitter.com/alexwidua"
+      }
+    ],
+    "description": "Create beautiful, smooth shadows in Figma",
+    "githubUrl": "https://github.com/alexwidua/figma-beautiful-shadows",
+    "id": "1068595505353552645",
+    "name": "Beautiful Shadows"
+  },
+  {
+    "authors": [
+      {
+        "name": "Drew Okenfuss",
+        "url": "https://figma.com/@professoroakie"
+      },
+      {
+        "name": "Sagar Ramesh",
+        "url": "https://twitter.com/sawgur"
+      }
+    ],
+    "description": "Generate brand asset templates in Figma",
+    "githubUrl": null,
+    "id": "1068010542677347310",
+    "name": "Brand Buddy"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kirk Bentley",
+        "url": "https://figma.com/@kirkbentley"
+      }
+    ],
+    "description": "Export and import component metadata in bulk",
+    "githubUrl": null,
+    "id": "1217084230796932000",
+    "name": "BulkMeta"
+  },
+  {
+    "authors": [
+      {
+        "name": "Brian Lovin",
+        "url": "https://twitter.com/brian_lovin"
+      }
+    ],
+    "description": "The home for your team’s work in progress",
+    "githubUrl": null,
+    "id": "1108886817260186751",
+    "name": "Campsite"
+  },
+  {
+    "authors": [
+      {
+        "name": "Victor Karanja",
+        "url": "https://twitter.com/karavic78"
+      }
+    ],
+    "description": "AI-powered design copilot that transforms text into stunning UI",
+    "githubUrl": null,
+    "id": "1278764073399815199",
+    "name": "Chat2Design"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Automagically organize and clean up your Figma document",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-clean-document",
+    "id": "767379019764649932",
+    "name": "Clean Document"
+  },
+  {
+    "authors": [
+      {
+        "name": "Pete Petrash",
+        "url": "https://twitter.com/petepetrash"
+      }
+    ],
+    "description": "Affinity mapping meets AI",
+    "githubUrl": null,
+    "id": "1225501037116774854",
+    "name": "Cluster"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Transform code snippets into fully editable Figma designs",
+    "githubUrl": null,
+    "id": "1222554159237609568",
+    "name": "code.to.design"
+  },
+  {
+    "authors": [
+      {
+        "name": "Diego Silva",
+        "url": "https://twitter.com/diegosilvatech"
+      }
+    ],
+    "description": "Create a beautiful color token with contrast according to WCAG",
+    "githubUrl": null,
+    "id": "1119749356529142486",
+    "name": "Color Contrast Generator"
+  },
+  {
+    "authors": [
+      {
+        "name": "Richard Bruskowski",
+        "url": "https://twitter.com/bruskowski"
+      }
+    ],
+    "description": "Create recipes for working with colors and color styles systematically",
+    "githubUrl": null,
+    "id": "1049477946127252395",
+    "name": "Color Kitchen"
+  },
+  {
+    "authors": [
+      {
+        "name": "Tekeste Kidanu",
+        "url": "https://twitter.com/tkmadeit"
+      }
+    ],
+    "description": "Apply a custom fill color to any object in your FigJam document",
+    "githubUrl": null,
+    "id": "1030933889092035687",
+    "name": "Color Picker for FigJam"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Copy and create components, and replace layers with components",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-component-utilities",
+    "id": "785894722513806497",
+    "name": "Component Utilities"
+  },
+  {
+    "authors": [
+      {
+        "name": "Khaled Garbaya",
+        "url": "https://twitter.com/khaled_garbaya"
+      }
+    ],
+    "description": "Effortlessly blend Contentful and Figma into your workflow",
+    "githubUrl": null,
+    "id": "789594601370719857",
+    "name": "Contentful to Figma"
+  },
+  {
+    "authors": [
+      {
+        "name": "Roman Nurik",
+        "url": "https://twitter.com/romannurik"
+      }
+    ],
+    "description": "Quickly and easily evaluate color contrast for accessibility across all your artboards",
+    "githubUrl": "https://github.com/romannurik/Figma-Contrast",
+    "id": "911262488575486588",
+    "name": "Contrast"
+  },
+  {
+    "authors": [
+      {
+        "name": "Saeed Alipoor",
+        "url": "https://twitter.com/Sali__Pure"
+      }
+    ],
+    "description": "Copy properties of the selected layers from the Quick Actions bar",
+    "githubUrl": null,
+    "id": "1048003170461690444",
+    "name": "Copy"
+  },
+  {
+    "authors": [
+      {
+        "name": "Alex Widua",
+        "url": "https://twitter.com/alexwidua"
+      }
+    ],
+    "description": "Create radial interfaces and patterns in Figma with instantiated, rotated copies of elements",
+    "githubUrl": "https://github.com/alexwidua/figma-copy-and-rotate",
+    "id": "1003651932772848456",
+    "name": "Copy & Rotate"
+  },
+  {
+    "authors": [
+      {
+        "name": "Maxim Artyushenko",
+        "url": "https://figma.com/@maxart2007"
+      }
+    ],
+    "description": "Copy and paste Auto Layout properties",
+    "githubUrl": null,
+    "id": "923016403442923783",
+    "name": "Copy and Paste Autolayout"
+  },
+  {
+    "authors": [
+      {
+        "name": "Michael Yagudaev",
+        "url": "https://twitter.com/yagudaev"
+      }
+    ],
+    "description": "Import a CSS gradient into Figma",
+    "githubUrl": "https://github.com/yagudaev/css-gradient-to-figma",
+    "id": "1157089605295322526",
+    "name": "CSS Gradient to Figma"
+  },
+  {
+    "authors": [
+      {
+        "name": "Aashrey Sharma",
+        "url": "https://twitter.com/aashrey_sharma"
+      }
+    ],
+    "description": "Darken or lighten the background color of all pages in your file",
+    "githubUrl": "https://github.com/aashreys/darken-pages",
+    "id": "1106710311855118659",
+    "name": "Darken Pages"
+  },
+  {
+    "authors": [
+      {
+        "name": "Andre Jilderda",
+        "url": "https://twitter.com/ajilderda"
+      }
+    ],
+    "description": "Quickly find, select and edit layers without taking your hands off your keyboard",
+    "githubUrl": null,
+    "id": "1179889828797638141",
+    "name": "Dash"
+  },
+  {
+    "authors": [
+      {
+        "name": "Klára Scholleová",
+        "url": "https://twitter.com/the_schollka"
+      }
+    ],
+    "description": "Generate business cards, certificates, or anything else you like as simply as pasting your data",
+    "githubUrl": "https://github.com/klarasch/data-merge",
+    "id": "1308577896517145604",
+    "name": "Data Merge"
+  },
+  {
+    "authors": [
+      {
+        "name": "Maarten Zilverberg",
+        "url": "https://twitter.com/mzilverberg"
+      }
+    ],
+    "description": "Delete multiple pages at once",
+    "githubUrl": null,
+    "id": "953656637827255284",
+    "name": "Delete Multiple Pages"
+  },
+  {
+    "authors": [
+      {
+        "name": "Aashrey Sharma",
+        "url": "https://twitter.com/aashrey_sharma"
+      }
+    ],
+    "description": "Bulk desaturate frames, groups and image fills in one click",
+    "githubUrl": "https://github.com/aashreys/desaturate",
+    "id": "972353621057384319",
+    "name": "Desaturate"
+  },
+  {
+    "authors": [
+      {
+        "name": "Wenju Li",
+        "url": "https://figma.com/@wenjuli"
+      }
+    ],
+    "description": "Export variables to JSON files, import variables from JSON files",
+    "githubUrl": null,
+    "id": "1263743870981744253",
+    "name": "Design Tokens Manager"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kirk Bentley",
+        "url": "https://figma.com/@kirkbentley"
+      }
+    ],
+    "description": "Recursively detach instances, remove auto layouts and detach styles",
+    "githubUrl": null,
+    "id": "1076733710017310027",
+    "name": "Destroyer"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Distribute layers in a given direction and offset",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-distribute-layers",
+    "id": "767379264700569551",
+    "name": "Distribute Layers"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Draw perfect orthogonal connectors between layers",
+    "githubUrl": null,
+    "id": "988836825341227586",
+    "name": "Draw Connector"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Draw a mask under the selection",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-draw-mask-under-selection",
+    "id": "806532458729477508",
+    "name": "Draw Mask Under Selection"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Draw a slice over the selection",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-draw-slice-over-selection",
+    "id": "767379335945775056",
+    "name": "Draw Slice Over Selection"
+  },
+  {
+    "authors": [
+      {
+        "name": "Raphael S.",
+        "url": "https://twitter.com/raf_underscore"
+      }
+    ],
+    "description": "Make it easier to create gradients",
+    "githubUrl": "https://github.com/raf-underscore/easier-gradients",
+    "id": "1137005439156522237",
+    "name": "Easier Gradients"
+  },
+  {
+    "authors": [
+      {
+        "name": "Alex Widua",
+        "url": "https://twitter.com/alexwidua"
+      }
+    ],
+    "description": "Create smooth gradient transitions with cubic easing functions",
+    "githubUrl": "https://github.com/alexwidua/figma-easing-gradients",
+    "id": "907899097995668330",
+    "name": "Easing Gradients"
+  },
+  {
+    "authors": [
+      {
+        "name": "Alina Medvid",
+        "url": "https://figma.com/@alinamedvid"
+      },
+      {
+        "name": "Anton Tishchenko",
+        "url": "https://figma.com/@antonytm"
+      }
+    ],
+    "description": "Create mockups in a few clicks",
+    "githubUrl": null,
+    "id": "1180592708021765520",
+    "name": "Easy Mockup"
+  },
+  {
+    "authors": [
+      {
+        "name": "Raphael S.",
+        "url": "https://twitter.com/raf_underscore"
+      }
+    ],
+    "description": "Create images for all social media platforms",
+    "githubUrl": "https://github.com/raf-underscore/exacto",
+    "id": "1134091253154887126",
+    "name": "Exacto"
+  },
+  {
+    "authors": [
+      {
+        "name": "Arman Abtahi",
+        "url": "https://figma.com/@armanabtahi"
+      },
+      {
+        "name": "Michael Yagudaev",
+        "url": "https://twitter.com/yagudaev"
+      },
+      {
+        "name": "Soheil Hajimohammadi",
+        "url": "https://twitter.com/sohei1L"
+      }
+    ],
+    "description": "1-click export of animation to HTML/CSS from Figma",
+    "githubUrl": null,
+    "id": "1316914571143821889",
+    "name": "Export to CSS Animation"
+  },
+  {
+    "authors": [
+      {
+        "name": "Arman Abtahi",
+        "url": "https://figma.com/@armanabtahi"
+      },
+      {
+        "name": "Michael Yagudaev",
+        "url": "https://twitter.com/yagudaev"
+      },
+      {
+        "name": "Soheil Hajimohammadi",
+        "url": "https://twitter.com/sohei1L"
+      }
+    ],
+    "description": "Export your smart animation flows to GIF/Video animations in just one click",
+    "githubUrl": null,
+    "id": "1170836206919391034",
+    "name": "Export to GIF/Video"
+  },
+  {
+    "authors": [
+      {
+        "name": "Honza Toman",
+        "url": "https://twitter.com/honzatmn"
+      }
+    ],
+    "description": "Export variables from one file and import them to another",
+    "githubUrl": null,
+    "id": "1256972111705530093",
+    "name": "Export/Import Variables"
+  },
+  {
+    "authors": [
+      {
+        "name": "Lalith Sanathi",
+        "url": "https://twitter.com/justapentool"
+      }
+    ],
+    "description": "Find layers using natural language, powered by AI",
+    "githubUrl": null,
+    "id": "1226839936768069599",
+    "name": "Falcon"
+  },
+  {
+    "authors": [
+      {
+        "name": "Adam Albarghouthi",
+        "url": "https://twitter.com/adamalbargh"
+      }
+    ],
+    "description": "Clean frame statuses to keep you focused and your team aligned",
+    "githubUrl": null,
+    "id": "1159865715100399885",
+    "name": "FigDone"
+  },
+  {
+    "authors": [
+      {
+        "name": "Saeed Alipoor",
+        "url": "https://twitter.com/Sali__Pure"
+      }
+    ],
+    "description": "Replace layers with library components that have a matching name",
+    "githubUrl": null,
+    "id": "981531596501862559",
+    "name": "FigLink"
+  },
+  {
+    "authors": [
+      {
+        "name": "ΚΛΤΤΛΧ",
+        "url": "https://twitter.com/TheUltDev"
+      }
+    ],
+    "description": "Transform your Figma components to React Native components in real time",
+    "githubUrl": "https://github.com/kat-tax/figma-to-react-native",
+    "id": "821138713091291738",
+    "name": "Figma → React Native"
+  },
+  {
+    "authors": [
+      {
+        "name": "Ryo Nakae",
+        "url": "https://twitter.com/ryo_dg"
+      }
+    ],
+    "description": "ChatGPT in Figma",
+    "githubUrl": "https://github.com/ryonakae/figma-plugin-figma-gpt",
+    "id": "1213050091855586023",
+    "name": "Figma GPT"
+  },
+  {
+    "authors": [
+      {
+        "name": "Gabriel Barbosa",
+        "url": "https://figma.com/@gabrielbarbosa5"
+      }
+    ],
+    "description": "Export Figma designs to Bootstrap 5 code",
+    "githubUrl": null,
+    "id": "1287660587112027215",
+    "name": "Figma to Bootstrap 5"
+  },
+  {
+    "authors": [
+      {
+        "name": "Quest",
+        "url": "https://quest.ai/"
+      }
+    ],
+    "description": "Convert your Figma to React code components automatically",
+    "githubUrl": null,
+    "id": "862039267149408972",
+    "name": "Figma to React"
+  },
+  {
+    "authors": [
+      {
+        "name": "Mohit Tater",
+        "url": "https://twitter.com/tatermohit"
+      }
+    ],
+    "description": "See your Figma variables in list, JSON, and CSS formats in both Dev mode and Design mode",
+    "githubUrl": null,
+    "id": "1310888112326715990",
+    "name": "Figma Variable Explorer"
+  },
+  {
+    "authors": [
+      {
+        "name": "Typper",
+        "url": "https://figma.com/@typper"
+      }
+    ],
+    "description": "Create images with AI",
+    "githubUrl": null,
+    "id": "1215781288748657078",
+    "name": "FigmaAI – Images"
+  },
+  {
+    "authors": [
+      {
+        "name": "Typper",
+        "url": "https://figma.com/@typper"
+      }
+    ],
+    "description": "Enhance text creation and editing with AI",
+    "githubUrl": null,
+    "id": "1203827738055553363",
+    "name": "FigmaAI – Text"
+  },
+  {
+    "authors": [
+      {
+        "name": "Saeed Alipoor",
+        "url": "https://twitter.com/Sali__Pure"
+      }
+    ],
+    "description": "Apply tags to frames",
+    "githubUrl": null,
+    "id": "998914249119019489",
+    "name": "FigTag"
+  },
+  {
+    "authors": [
+      {
+        "name": "Wei Zhong",
+        "url": "https://figma.com/@wei"
+      }
+    ],
+    "description": "Find and replace colors",
+    "githubUrl": null,
+    "id": "806266638862897503",
+    "name": "Find and Replace Colors"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Rasterize layers at a high resolution",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-flatten-selection-to-bitmap",
+    "id": "837846252158418235",
+    "name": "Flatten Selection to Bitmap"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kristin Baumann",
+        "url": "https://twitter.com/kristin_baumann"
+      }
+    ],
+    "description": "View all your fonts directly to pick the right one for your design",
+    "githubUrl": null,
+    "id": "1139667456056598424",
+    "name": "Font Picker"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kristin Baumann",
+        "url": "https://twitter.com/kristin_baumann"
+      }
+    ],
+    "description": "Easily replace font families and font styles",
+    "githubUrl": null,
+    "id": "738840446766071906",
+    "name": "Font Replacer"
+  },
+  {
+    "authors": [
+      {
+        "name": "Saeed Alipoor",
+        "url": "https://twitter.com/Sali__Pure"
+      }
+    ],
+    "description": "Change the font via Quick Actions while preserving the font weight",
+    "githubUrl": null,
+    "id": "1039430358164496626",
+    "name": "Font Switcher"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Format and convert between currencies",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-format-currency",
+    "id": "780785006732555859",
+    "name": "Format Currency"
+  },
+  {
+    "authors": [
+      {
+        "name": "Frad Lee",
+        "url": "https://twitter.com/FradSer"
+      }
+    ],
+    "description": "Increase the spacing at the four edges of the frame, centering the original content",
+    "githubUrl": "https://github.com/FradSer/figma-frame-resizer",
+    "id": "1054060403452308301",
+    "name": "Frame Resizer"
+  },
+  {
+    "authors": [
+      {
+        "name": "Mike Wilson",
+        "url": "https://twitter.com/mk_wlsn"
+      }
+    ],
+    "description": "Write in Markdown or link documentation and attach it to your components",
+    "githubUrl": null,
+    "id": "1073059820691713754",
+    "name": "Gist"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kent Yang",
+        "url": "https://figma.com/@kn"
+      }
+    ],
+    "description": "Use FigJam connectors in Figma",
+    "githubUrl": null,
+    "id": "1142132546076518629",
+    "name": "Give Me FigJam Connectors!"
+  },
+  {
+    "authors": [
+      {
+        "name": "Alex Widua",
+        "url": "https://twitter.com/alexwidua"
+      }
+    ],
+    "description": "Apply a smooth, beautiful glow to your elements",
+    "githubUrl": "https://github.com/alexwidua/figma-glow",
+    "id": "1078011857203492445",
+    "name": "Glow"
+  },
+  {
+    "authors": [
+      {
+        "name": "Tekeste Kidanu",
+        "url": "https://twitter.com/tkmadeit"
+      }
+    ],
+    "description": "Use Bob Ross’s happy quotes as placeholder text",
+    "githubUrl": null,
+    "id": "1040116132312926263",
+    "name": "Happy Ipsum"
+  },
+  {
+    "authors": [
+      {
+        "name": "Tekeste Kidanu",
+        "url": "https://twitter.com/tkmadeit"
+      }
+    ],
+    "description": "Free and open source health icons",
+    "githubUrl": "https://github.com/iamtekeste/health-icons-figma-plugin",
+    "id": "992844281461869440",
+    "name": "Health Icons"
+  },
+  {
+    "authors": [
+      {
+        "name": "Creative Robots",
+        "url": "https://figma.com/@creative_robots"
+      }
+    ],
+    "description": "Beautiful web illustrations, with AI",
+    "githubUrl": null,
+    "id": "1242954096510314253",
+    "name": "Hippo AI"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Convert any website into fully editable Figma designs",
+    "githubUrl": null,
+    "id": "1159123024924461424",
+    "name": "html.to.design"
+  },
+  {
+    "authors": [
+      {
+        "name": "Humation",
+        "url": "https://twitter.com/humationapp"
+      }
+    ],
+    "description": "Human illustration system",
+    "githubUrl": null,
+    "id": "1252595876303925244",
+    "name": "Humation"
+  },
+  {
+    "authors": [
+      {
+        "name": "Jorge Martins",
+        "url": "https://twitter.com/jorgemartns"
+      }
+    ],
+    "description": "Automatically create variants for different icon sizes",
+    "githubUrl": null,
+    "id": "1000211110592209830",
+    "name": "Icon Sizes"
+  },
+  {
+    "authors": [
+      {
+        "name": "Icon Bundler",
+        "url": "https://iconbundler.com/"
+      }
+    ],
+    "description": "Export icons to React, Vue and Svelte",
+    "githubUrl": null,
+    "id": "1279765215672775733",
+    "name": "iconbundler"
+  },
+  {
+    "authors": [
+      {
+        "name": "Tekeste Kidanu",
+        "url": "https://twitter.com/tkmadeit"
+      }
+    ],
+    "description": "The definitive open source icon library",
+    "githubUrl": null,
+    "id": "1064682537072050696",
+    "name": "Iconoir"
+  },
+  {
+    "authors": [
+      {
+        "name": "Sasha",
+        "url": "https://twitter.com/sasha_codes"
+      }
+    ],
+    "description": "iPhone 15 Pro Max devices in different styles and variations",
+    "githubUrl": null,
+    "id": "1305891870034170272",
+    "name": "iMockup"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Insert and retain the original resolution of big images",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-insert-big-image",
+    "id": "799646392992487942",
+    "name": "Insert Big Image"
+  },
+  {
+    "authors": [
+      {
+        "name": "Aashrey Sharma",
+        "url": "https://twitter.com/aashrey_sharma"
+      }
+    ],
+    "description": "Meme generator for Figma and FigJam",
+    "githubUrl": "https://github.com/aashreys/is-this-a-meme",
+    "id": "1079668442847380531",
+    "name": "Is This A Meme?"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuki Takemoto",
+        "url": "https://twitter.com/mottox2"
+      }
+    ],
+    "description": "Easily set the font in text layers containing both Japanese and non-Japanese characters",
+    "githubUrl": null,
+    "id": "1119612117220702803",
+    "name": "Japanese Font Mixer"
+  },
+  {
+    "authors": [
+      {
+        "name": "Hiroki Tani",
+        "url": "https://twitter.com/hiloki"
+      }
+    ],
+    "description": "Convert JSON to color variables",
+    "githubUrl": null,
+    "id": "1304481992729678387",
+    "name": "JSON to Color Variables"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Test your UI in different languages",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-language-tester",
+    "id": "767379122107077581",
+    "name": "Language Tester"
+  },
+  {
+    "authors": [
+      {
+        "name": "Mark Dalgleish",
+        "url": "https://twitter.com/markdalgleish"
+      }
+    ],
+    "description": "Trim your text elements, removing space above capital letters and below the baseline",
+    "githubUrl": "https://github.com/markdalgleish/figma-leading-trim",
+    "id": "1143761729202073143",
+    "name": "Leading Trim"
+  },
+  {
+    "authors": [
+      {
+        "name": "Truman Du",
+        "url": "https://twitter.com/genuine_impact"
+      }
+    ],
+    "description": "Quickly generate a line chart and easily populate it with random or precise data",
+    "githubUrl": null,
+    "id": "1172154175810151778",
+    "name": "Line Chart"
+  },
+  {
+    "authors": [
+      {
+        "name": "Masanori Ueda",
+        "url": "https://twitter.com/wentz_design"
+      }
+    ],
+    "description": "Generate a simple line chart",
+    "githubUrl": null,
+    "id": "1228330653779206411",
+    "name": "Line Chart Generator"
+  },
+  {
+    "authors": [
+      {
+        "name": "Lorenz Wöhr",
+        "url": "https://lorenzwoehr.com/"
+      }
+    ],
+    "description": "Link spacing variables with your design system",
+    "githubUrl": null,
+    "id": "1258541120380373830",
+    "name": "Link Spacing Variables"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Generate direct links to your selection, exported as SVG / PNG / PDF / JPG",
+    "githubUrl": null,
+    "id": "1295697368673613991",
+    "name": "link.to.design"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Fill your designs with placeholders in a click",
+    "githubUrl": null,
+    "id": "736000994034548392",
+    "name": "Lorem Ipsum"
+  },
+  {
+    "authors": [
+      {
+        "name": "Meni Zanzibar",
+        "url": "https://figma.com/@meni"
+      }
+    ],
+    "description": "Generate dummy text for your mockups",
+    "githubUrl": null,
+    "id": "941410492434902618",
+    "name": "Lorepsum"
+  },
+  {
+    "authors": [
+      {
+        "name": "Arman Abtahi",
+        "url": "https://figma.com/@armanabtahi"
+      },
+      {
+        "name": "Michael Yagudaev",
+        "url": "https://twitter.com/yagudaev"
+      },
+      {
+        "name": "Soheil Hajimohammadi",
+        "url": "https://twitter.com/sohei1L"
+      }
+    ],
+    "description": "Transform one vector into another and export it as an HTML animation",
+    "githubUrl": null,
+    "id": "1294450680812113347",
+    "name": "Morph Animation"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Precisely move layers",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-move-layers",
+    "id": "767379204511357902",
+    "name": "Move Layers"
+  },
+  {
+    "authors": [
+      {
+        "name": "Jeremy Knudsen",
+        "url": "https://figma.com/@jeremyknudsen"
+      }
+    ],
+    "description": "Create and export Windows icons directly from Figma",
+    "githubUrl": null,
+    "id": "1260682452610603641",
+    "name": "My ICO of Joy"
+  },
+  {
+    "authors": [
+      {
+        "name": "Saeed Alipoor",
+        "url": "https://twitter.com/Sali__Pure"
+      }
+    ],
+    "description": "Create one or more pages via Quick Actions",
+    "githubUrl": null,
+    "id": "1037336302051693897",
+    "name": "New Page"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Organize layers on the page",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-organize-layers",
+    "id": "786286754606650597",
+    "name": "Organize Layers"
+  },
+  {
+    "authors": [
+      {
+        "name": "ShuaiQi Sun",
+        "url": "https://twitter.com/SShuaiqi"
+      }
+    ],
+    "description": "Convert filled vectors back to editable single-line vectors",
+    "githubUrl": null,
+    "id": "1027037684003682350",
+    "name": "Outline to Single Stroke"
+  },
+  {
+    "authors": [
+      {
+        "name": "Nick Romashov",
+        "url": "https://twitter.com/romashov"
+      }
+    ],
+    "description": "Simplify your screenshot process",
+    "githubUrl": null,
+    "id": "1256338758176314434",
+    "name": "Page Capture"
+  },
+  {
+    "authors": [
+      {
+        "name": "Tim Hawkins",
+        "url": "https://figma.com/@timhawkins"
+      }
+    ],
+    "description": "Create and customize beautiful design assets in an instant",
+    "githubUrl": null,
+    "id": "1212293397617410608",
+    "name": "PatternKid"
+  },
+  {
+    "authors": [
+      {
+        "name": "Tabler Icons",
+        "url": "https://twitter.com/codecalm"
+      }
+    ],
+    "description": "Over 3,100 pixel-perfect icons",
+    "githubUrl": "https://github.com/tabler/tabler-icons-figma",
+    "id": "1169807996149376642",
+    "name": "Paweł Kuna"
+  },
+  {
+    "authors": [
+      {
+        "name": "Gautham Sajith",
+        "url": "https://twitter.com/GuamHat"
+      }
+    ],
+    "description": "Drag-and-drop import of PDF files into Figma",
+    "githubUrl": "https://github.com/gsajith/pdf-to-figma",
+    "id": "1105316927173658462",
+    "name": "PDF to Figma"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Convert any PDF document into Figma designs",
+    "githubUrl": null,
+    "id": "1280917768965269588",
+    "name": "pdf.to.design"
+  },
+  {
+    "authors": [
+      {
+        "name": "Jeremy Knudsen",
+        "url": "https://figma.com/@jeremyknudsen"
+      }
+    ],
+    "description": "Inspect and manipulate color gradients using the OKLCH color space",
+    "githubUrl": null,
+    "id": "1266828922235523696",
+    "name": "Perceptual Color"
+  },
+  {
+    "authors": [
+      {
+        "name": "Gautham Sajith",
+        "url": "https://twitter.com/GuamHat"
+      }
+    ],
+    "description": "Generates and inserts AI-generated faces",
+    "githubUrl": "https://github.com/gsajith/person-generator",
+    "id": "1104262872207297670",
+    "name": "Person Generator"
+  },
+  {
+    "authors": [
+      {
+        "name": "Aryan Shah",
+        "url": "https://figma.com/@aryan_ui_ux"
+      },
+      {
+        "name": "Riken Shah",
+        "url": "https://twitter.com/_RikenShah"
+      }
+    ],
+    "description": "Create artwork in seconds",
+    "githubUrl": null,
+    "id": "1158539818059705018",
+    "name": "PicsAI"
+  },
+  {
+    "authors": [
+      {
+        "name": "Masanori Ueda",
+        "url": "https://twitter.com/wentz_design"
+      }
+    ],
+    "description": "Generate a simple pie chart",
+    "githubUrl": null,
+    "id": "1210450291108691193",
+    "name": "Pie Chart Generator"
+  },
+  {
+    "authors": [
+      {
+        "name": "Hiroki Tani",
+        "url": "https://twitter.com/hiloki"
+      }
+    ],
+    "description": "Fill placeholders with various dog images",
+    "githubUrl": null,
+    "id": "1177318800464881150",
+    "name": "Placedoggo"
+  },
+  {
+    "authors": [
+      {
+        "name": "Ben Katz",
+        "url": "https://twitter.com/benktz"
+      }
+    ],
+    "description": "Create print-ready documents directly in Figma",
+    "githubUrl": null,
+    "id": "874441781480244375",
+    "name": "Print for Figma"
+  },
+  {
+    "authors": [
+      {
+        "name": "Saeed Alipoor",
+        "url": "https://twitter.com/Sali__Pure"
+      }
+    ],
+    "description": "Draw flow arrows based on prototype interactions",
+    "githubUrl": null,
+    "id": "989539821393693492",
+    "name": "ProToFlow"
+  },
+  {
+    "authors": [
+      {
+        "name": "Santiago Moreno",
+        "url": "https://twitter.com/sntiagomoreno"
+      }
+    ],
+    "description": "Create, save and reuse prototype interactions",
+    "githubUrl": null,
+    "id": "1021879782774011952",
+    "name": "Protofly"
+  },
+  {
+    "authors": [
+      {
+        "name": "Aashrey Sharma",
+        "url": "https://twitter.com/aashrey_sharma"
+      }
+    ],
+    "description": "Automatically create gamepad navigation prototypes",
+    "githubUrl": "https://github.com/aashreys/prototyper",
+    "id": "1020894954864594118",
+    "name": "Prototyper"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kirk Bentley",
+        "url": "https://figma.com/@kirkbentley"
+      }
+    ],
+    "description": "Apply status indicators to your layers in a flash",
+    "githubUrl": null,
+    "id": "1081181836422264345",
+    "name": "Quick Status"
+  },
+  {
+    "authors": [
+      {
+        "name": "Masanori Ueda",
+        "url": "https://twitter.com/wentz_design"
+      }
+    ],
+    "description": "Generate a simple radar chart",
+    "githubUrl": null,
+    "id": "1229257209607257414",
+    "name": "Radar Chart Generator"
+  },
+  {
+    "authors": [
+      {
+        "name": "Aashrey Sharma",
+        "url": "https://twitter.com/aashrey_sharma"
+      }
+    ],
+    "description": "Design radial menus in Figma",
+    "githubUrl": "https://github.com/aashreys/radial-generator",
+    "id": "1118321937703348544",
+    "name": "Radial Generator"
+  },
+  {
+    "authors": [
+      {
+        "name": "Tekeste Kidanu",
+        "url": "https://twitter.com/tkmadeit"
+      }
+    ],
+    "description": "A crisp set of icons designed by Modulz",
+    "githubUrl": "https://github.com/colmtuite/icons-figma",
+    "id": "1004461092590904310",
+    "name": "Radix Icons"
+  },
+  {
+    "authors": [
+      {
+        "name": "Flexcode Labs",
+        "url": "https://twitter.com/flexcodelabs"
+      },
+      {
+        "name": "Neema Adam",
+        "url": "https://twitter.com/neicoree"
+      }
+    ],
+    "description": "Generates hues, tints, and/or shades from a given color",
+    "githubUrl": "https://github.com/flexcodelabs/rangi",
+    "id": "1153959136228678599",
+    "name": "rangi"
+  },
+  {
+    "authors": [
+      {
+        "name": "Ryan Sael",
+        "url": "https://twitter.com/ryansael"
+      }
+    ],
+    "description": "Find the right words fast",
+    "githubUrl": null,
+    "id": "1234908905353558285",
+    "name": "Rapid Copywriting"
+  },
+  {
+    "authors": [
+      {
+        "name": "Sanjeevkumar Hegde",
+        "url": "https://figma.com/@sanjeevhegde"
+      }
+    ],
+    "description": "Create redlines and annotations dynamically",
+    "githubUrl": null,
+    "id": "1228826129267290034",
+    "name": "Redlines & Annotations"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kirk Bentley",
+        "url": "https://figma.com/@kirkbentley"
+      }
+    ],
+    "description": "Quickly resize your device mockups using a top-down responsive layout method",
+    "githubUrl": null,
+    "id": "1140490231443213828",
+    "name": "Reframer"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Remove the background from images 100% privately",
+    "githubUrl": null,
+    "id": "1278756064864777232",
+    "name": "Remove Background"
+  },
+  {
+    "authors": [
+      {
+        "name": "Daniel Amram",
+        "url": "https://figma.com/@codbite"
+      }
+    ],
+    "description": "Make vector elements sketchy and hand-drawn",
+    "githubUrl": null,
+    "id": "1177565418933907283",
+    "name": "Roughly"
+  },
+  {
+    "authors": [
+      {
+        "name": "Abdelwahab Muhammed",
+        "url": "https://twitter.com/abdelwahabb_"
+      }
+    ],
+    "description": "Convert your design layouts to right-to-left and translate them with a single click!",
+    "githubUrl": null,
+    "id": "1299598792826701614",
+    "name": "RTL Layout"
+  },
+  {
+    "authors": [
+      {
+        "name": "Saeed Alipoor",
+        "url": "https://twitter.com/Sali__Pure"
+      }
+    ],
+    "description": "Write in RTL",
+    "githubUrl": "https://github.com/saeedalipoor/RTLPLZ",
+    "id": "742121299910255177",
+    "name": "RTL PLZ"
+  },
+  {
+    "authors": [
+      {
+        "name": "Saeed Alipoor",
+        "url": "https://twitter.com/Sali__Pure"
+      }
+    ],
+    "description": "Companion to RTL PLZ to allow text selection and developer handoff",
+    "githubUrl": null,
+    "id": "947478767900326156",
+    "name": "RTL PLZ Handoff"
+  },
+  {
+    "authors": [
+      {
+        "name": "LaMoore",
+        "url": "https://figma.com/@la_moore"
+      }
+    ],
+    "description": "More than 2800 custom icons available for you, organized and for free",
+    "githubUrl": null,
+    "id": "1053846082213772972",
+    "name": "Scarlab Icons"
+  },
+  {
+    "authors": [
+      {
+        "name": "Aashrey Sharma",
+        "url": "https://twitter.com/aashrey_sharma"
+      }
+    ],
+    "description": "Quickly add a scrim over the selected layer",
+    "githubUrl": "https://github.com/aashreys/scrim-that",
+    "id": "1062137197474406566",
+    "name": "Scrim That"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Select layers based on name, type, or similarity",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-select-layers",
+    "id": "799648692768237063",
+    "name": "Select Layers"
+  },
+  {
+    "authors": [
+      {
+        "name": "Gleb Sabirzyanov",
+        "url": "https://twitter.com/zyumbik"
+      },
+      {
+        "name": "Richard Guerre",
+        "url": "https://twitter.com/RichardGuerre_"
+      }
+    ],
+    "description": "Control nested variants instances within the selection",
+    "githubUrl": null,
+    "id": "1027413532986522043",
+    "name": "Selection Variants"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Precisely set the size of layers, while ignoring constraints",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-set-layer-size",
+    "id": "817982008781589678",
+    "name": "Set Layer Size"
+  },
+  {
+    "authors": [
+      {
+        "name": "Michael Yagudaev",
+        "url": "https://twitter.com/yagudaev"
+      },
+      {
+        "name": "Soheil Hajimohammadi",
+        "url": "https://twitter.com/sohei1L"
+      }
+    ],
+    "description": "Share text and images to social media without leaving Figma",
+    "githubUrl": null,
+    "id": "1285721021860422447",
+    "name": "Share to Social Media"
+  },
+  {
+    "authors": [
+      {
+        "name": "Alina Medvid",
+        "url": "https://figma.com/@alinamedvid"
+      },
+      {
+        "name": "Anton Tishchenko",
+        "url": "https://figma.com/@antonytm"
+      }
+    ],
+    "description": "Skew any object in your design",
+    "githubUrl": null,
+    "id": "1288423133657605450",
+    "name": "Skew 360°"
+  },
+  {
+    "authors": [
+      {
+        "name": "Pavel Kuprin",
+        "url": "https://figma.com/@kuprin"
+      }
+    ],
+    "description": "Easily connect frames in Figma using customizable arrows",
+    "githubUrl": null,
+    "id": "1283830698192890694",
+    "name": "Smart Route"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Sort layers by name or position",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-sort-layers",
+    "id": "767379414704079825",
+    "name": "Sort Layers"
+  },
+  {
+    "authors": [
+      {
+        "name": "Stas Kulesh",
+        "url": "https://twitter.com/stas_kulesh"
+      }
+    ],
+    "description": "Powerful spelling and grammar inspector",
+    "githubUrl": null,
+    "id": "1140879347257676557",
+    "name": "SpellCheck"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Turn your Storybook or Backlight stories into a Figma UI Kit",
+    "githubUrl": null,
+    "id": "1075741140914731351",
+    "name": "story.to.design"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Stretch text, vectors, and frames, and edit after",
+    "githubUrl": null,
+    "id": "1288508418281450054",
+    "name": "Stretch"
+  },
+  {
+    "authors": [
+      {
+        "name": "Joseph Le",
+        "url": "https://twitter.com/josephnqle"
+      }
+    ],
+    "description": "Import Style Dictionary JSON to Figma variables",
+    "githubUrl": null,
+    "id": "1254182310197842774",
+    "name": "Style Dictionary to Variables"
+  },
+  {
+    "authors": [
+      {
+        "name": "Corey Lee",
+        "url": "https://twitter.com/factorzero"
+      }
+    ],
+    "description": "Apply multiple text styles to a text layer automatically based on language character sets",
+    "githubUrl": null,
+    "id": "1310549497852945534",
+    "name": "Style Merger"
+  },
+  {
+    "authors": [
+      {
+        "name": "Alex Streza",
+        "url": "https://twitter.com/alex_streza"
+      }
+    ],
+    "description": "Generate, edit, create variants for images using DALL-E 2",
+    "githubUrl": null,
+    "id": "1172891596048319817",
+    "name": "Summon.AI"
+  },
+  {
+    "authors": [
+      {
+        "name": "Hiroki Tani",
+        "url": "https://twitter.com/hiloki"
+      }
+    ],
+    "description": "Convert FigJam table cells to sticky notes",
+    "githubUrl": null,
+    "id": "1221892477305959368",
+    "name": "Table to Sticky Notes"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kirk Bentley",
+        "url": "https://figma.com/@kirkbentley"
+      }
+    ],
+    "description": "Quickly export and import CSV copy decks",
+    "githubUrl": null,
+    "id": "1099277867718022006",
+    "name": "Text Porter"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Split, normalize, and bulk copy and paste text layers",
+    "githubUrl": "https://github.com/yuanqing/figma-plugins/tree/main/packages/figma-text-utilities",
+    "id": "899501266127939530",
+    "name": "Text Utilities"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yahoo! Japan",
+        "url": "https://figma.com/@yahoojapan"
+      }
+    ],
+    "description": "Easily switch between two color styles applied to selected layers",
+    "githubUrl": null,
+    "id": "1143458500532683999",
+    "name": "Theme Switcher"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kyler Phillips",
+        "url": "https://twitter.com/kylerjphillips"
+      }
+    ],
+    "description": "Quickly generate thumbnail covers for your project",
+    "githubUrl": "https://github.com/kylerphillips/thumbnail-kit",
+    "id": "1087800204796905364",
+    "name": "Thumbnail Kit"
+  },
+  {
+    "authors": [
+      {
+        "name": "Hiroki Tani",
+        "url": "https://twitter.com/hiloki"
+      }
+    ],
+    "description": "Build a Table of Contents in an instant",
+    "githubUrl": null,
+    "id": "971347067329627666",
+    "name": "ToC Builder"
+  },
+  {
+    "authors": [
+      {
+        "name": "Arman Abtahi",
+        "url": "https://figma.com/@armanabtahi"
+      },
+      {
+        "name": "Michael Yagudaev",
+        "url": "https://twitter.com/yagudaev"
+      },
+      {
+        "name": "Soheil Hajimohammadi",
+        "url": "https://twitter.com/sohei1L"
+      }
+    ],
+    "description": "1-click conversion from bitmap to SVG vectors",
+    "githubUrl": null,
+    "id": "1291512177354533481",
+    "name": "Trace Images"
+  },
+  {
+    "authors": [
+      {
+        "name": "Luca Dalli",
+        "url": "https://twitter.com/webdevluca"
+      }
+    ],
+    "description": "Create seamless patterns in seconds",
+    "githubUrl": null,
+    "id": "1160939259102989594",
+    "name": "Tylify"
+  },
+  {
+    "authors": [
+      {
+        "name": "Alina Medvid",
+        "url": "https://figma.com/@alinamedvid"
+      },
+      {
+        "name": "Anton Tishchenko",
+        "url": "https://figma.com/@antonytm"
+      }
+    ],
+    "description": "Do text transformations directly in Figma",
+    "githubUrl": null,
+    "id": "1183722659656348694",
+    "name": "Type Tool"
+  },
+  {
+    "authors": [
+      {
+        "name": "Typper",
+        "url": "https://figma.com/@typper"
+      }
+    ],
+    "description": "Code that works from anything inside Figma, in all frameworks",
+    "githubUrl": null,
+    "id": "1259335676400635834",
+    "name": "Typper – Codes"
+  },
+  {
+    "authors": [
+      {
+        "name": "Daniel Amram",
+        "url": "https://figma.com/@codbite"
+      }
+    ],
+    "description": "Remove background from images in a single click",
+    "githubUrl": null,
+    "id": "1181637104403040691",
+    "name": "Unbackground"
+  },
+  {
+    "authors": [
+      {
+        "name": "divRIOTS",
+        "url": "https://twitter.com/divriots"
+      }
+    ],
+    "description": "Improves any image in Figma to make it high resolution",
+    "githubUrl": null,
+    "id": "1291418014691383723",
+    "name": "Upscale"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuan Qing Lim",
+        "url": "https://twitter.com/yuanqinglim"
+      }
+    ],
+    "description": "Supercharge your variable workflows",
+    "githubUrl": null,
+    "id": "1271383289541400562",
+    "name": "Variable Utilities"
+  },
+  {
+    "authors": [
+      {
+        "name": "Yuki Takemoto",
+        "url": "https://twitter.com/mottox2"
+      }
+    ],
+    "description": "Displays variables used in the selection",
+    "githubUrl": "https://github.com/mottox2/figma-variables-inspector",
+    "id": "1263366994349005841",
+    "name": "Variables Inspector"
+  },
+  {
+    "authors": [
+      {
+        "name": "Vladislav Mikhailov",
+        "url": "https://figma.com/@vmikh"
+      }
+    ],
+    "description": "Displays variables in a table view",
+    "githubUrl": null,
+    "id": "1296936195607753364",
+    "name": "Variables to Table"
+  },
+  {
+    "authors": [
+      {
+        "name": "Haoqi Wen",
+        "url": "https://twitter.com/wenhaoqi"
+      }
+    ],
+    "description": "Fast, easy and practical powerful icon production and batch export tool",
+    "githubUrl": null,
+    "id": "1255914175202017737",
+    "name": "VectorSymbols"
+  },
+  {
+    "authors": [
+      {
+        "name": "Felix Handschuh",
+        "url": "https://twitter.com/subbotnik_io"
+      },
+      {
+        "name": "Tobias Schwerdtfeger",
+        "url": "https://twitter.com/t0bsdt"
+      }
+    ],
+    "description": "Export WebP files from Figma for Web or Android",
+    "githubUrl": "https://github.com/tobias-schwerdtfeger/WebP-Generator-Figma",
+    "id": "1181873200384736932",
+    "name": "WebP Generator"
+  },
+  {
+    "authors": [
+      {
+        "name": "Kirk Bentley",
+        "url": "https://figma.com/@kirkbentley"
+      }
+    ],
+    "description": "Quickly apply flexible Auto Layout presets and align Auto Layout content",
+    "githubUrl": "https://figma.com/community/plugin/1082201909715309983/XAuto",
+    "id": "1082201909715309983",
+    "name": "XAuto"
+  },
+  {
+    "authors": [
+      {
+        "name": "Frad Lee",
+        "url": "https://twitter.com/FradSer"
+      }
+    ],
+    "description": "Tools to help you design XR applications",
+    "githubUrl": "https://github.com/FradSer/figma-xr-design-tools",
+    "id": "1149634536150338038",
+    "name": "XR Design Tools"
+  }
+]
